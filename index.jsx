@@ -14,7 +14,7 @@ const Wrapper = ({test}) =>{
 	return (
 
 		<div>
-			testeeeee
+			Wrapper
 		</div>
 	);
 }
