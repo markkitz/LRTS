@@ -1,106 +1,117 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+const Redux = require('redux');
 const {Component } = React;
-const Row = require('react-bootstrap/lib/Row');
-const Col = require('react-bootstrap/lib/Col');
+import TextInput  from './components/TextInput.jsx'
+import SubForm  from './components/Subform.jsx'
+import CourseInfoForm  from './components/CourseInfoForm.jsx'
+import PrintDetailsForm  from './components/PrintDetailsForm.jsx'
 
-const Header = () => {
-	return(
-		<div className="hdr">header</div>	
-	);
-}
+// var PrintDetailsForm = React.createClass(
+// 	{
+// 		isDirty:false,
+// 		getInitialState: function() {
+// 			
+// 			return this.props.printDetails;
+// 		},
+// 		
+// 		
+// 		saveState: function(e) {
+// 			if(this.isDirty)
+// 			{
+// 				console.log("save");
+// 			}
+// 			this.isDirty =false;
+// 		},
+// 		setVariable(name, value) {
+// 			this.isDirty = true;
+// 			this.setState({[name]: value});
+// 		},
+// 		render:function() {
+// 			
+// 			const {onPrevious, onNext, visibleForm} = this.props;
+// 			return(
+// 				<SubForm heading={'Printing Details'} isVisible={visibleForm=='PrintDetailsForm'} onPrevious ={onPrevious} onNext = {onNext} >
+// 					<TextInput label="field1:" name="field1" value={this.state.field1} onChange={this.setVariable}  onBlur = {this.saveState}  />
+// 				</SubForm>
+// 			);
+// 		}		
+// 	}
+// );
 
-const Wrapper = ({test}) =>{
-	console.log(test);
-	return (
 
+
+
+const App = React.createClass({
+
+	visibleForm: 'CourseInfoForm',
+	render: function(){
+		return(
 		<div>
-			Wrapper
-		</div>
-	);
-}
-
-const CoursePackNav = () =>{
-	return (
-		<ul>
-			<li>Change Type</li>
-		</ul>
-	);
-}
-
-
-
-const FormField= React.createClass({
-
-	render() {
-			let {label} = this.props;
-		return(<Row>
-				<Col sm={4} className="control-label">
-				<label>{label} </label>
-				</Col>
-				<Col sm={8} >
-				{this.props.children}
-				</Col>
-			</Row>);
-	}
-});
-
-const TextInput = ({label, value}) => {
-	return(<FormField label={label}>
-		<input type="text" value={value} />
-	</FormField>);
-};
-
-const CoverInformation = ({coverInfo}) => {
-	return (
-		
-		<SubForm heading={'Cover Information'}>
-			<div >
+			<CourseInfoForm dispatch={store.dispatch} visibleForm={store.getState().formState.currentForm}  model={store.getState().courseInfo}    />
+			<PrintDetailsForm dispatch={store.dispatch} visibleForm={store.getState().formState.currentForm}  model={store.getState().printDetails}    />
 			
-	
-				<TextInput label={'Course Pack Number'} value={coverInfo.coursePackNumber} />
-				<TextInput label={'Title'} value={coverInfo.title} />
-				<TextInput label={'Subtitle'} value={coverInfo.subtitle} />
-				
-			</div>	
-		</SubForm>	
-	);
-};
-
-const SubForm = React.createClass({
-
-	render() {
-			let {heading} = this.props;
-		return(<div className="cmp-cinfo">
-			<h3>{heading}</h3>
-			<div>{this.props.children}</div>
 		</div>);
-	}
+	}	
 });
-
-
-
-const Test1Comp = ({state}) => {
-	var test = 123;
-	console.log(state);
-	return(
-		
-		<form className="form-horizontal"  >
-						
-				<CoverInformation coverInfo={state.coverInfo} />
-						
-		</form>
-	);
-}
-
 
 
 const render = () => {
 	ReactDOM.render(		
-		<Test1Comp state={state}  />, document.getElementById('root')
+		<App/>
+		, document.getElementById('root')
 	);	
 };
 
-let state = {coverInfo: {coursePackNumber:'ABC123', title:'This is the title', subtitle:'This is the subtitle'}};
+var json = {
+		courseInfo:{
+			coursePackNumber:'ABC123', 
+			title:'This is the title', 
+			subtitle:'This is the subtitle'
+		},
+		printDetails: {
+			field1: 'test'
+		}
+	
+};
 
+///////////reducer//////////////
+
+const courseInfo = (state= json.courseInfo, action) => {
+	console.log(action);
+	switch(action.type){
+		case 'UPDATE_COVERINFO':
+			var result = {...state,  [action.keyValue.name]: action.keyValue.value };
+			console.log(result);
+			return result;
+		default:
+			return state;
+	}  
+}
+const printDetails = (state= json.printDetails, action) => {
+	console.log(action);
+	switch(action.type){
+		case 'UPDATE_PRINTDETAILS':
+			var result = {...state,  [action.keyValue.name]: action.keyValue.value };
+			console.log(result);
+			return result;
+		default:
+			return state;
+	}  
+}
+const formState = (state= {currentForm:'CourseInfoForm'}, action) => {
+	switch(action.type){
+		case 'PREVIOUS_CLICK':
+			return {...state, currentForm:'CourseInfoForm'};
+		case 'NEXT_CLICK':
+			return {...state, currentForm:'PrintDetailsForm'};
+		default:
+			return state;
+	}
+}
+const {createStore, combineReducers} = Redux;
+const coursePackApp = combineReducers({courseInfo, printDetails,formState});
+var store = createStore(coursePackApp);
+console.log(store.getState(), "get state");
+store.subscribe(render);
 render();
