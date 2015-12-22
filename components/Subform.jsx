@@ -26,7 +26,6 @@ SubForm = connect()(SubForm);
 
 
 const PrevNextNav = ({onPrevious, onNext}) => {
-
     return (
         
         <div>
@@ -34,6 +33,5 @@ const PrevNextNav = ({onPrevious, onNext}) => {
             <button type="button" className="btn btn-primary" onClick={onNext}>Next</button>
         </div>	
     );
-
 };
 export default SubForm;

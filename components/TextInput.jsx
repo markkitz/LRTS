@@ -1,12 +1,10 @@
-const React = require('react');
+import React, { Component, PropTypes } from 'react'
 import FormField from './FormField.jsx'
 
-const TextInput = React.createClass({
-	  
+export default class TextInput extends Component{	  
 	render() {
 			let {label, name, value, onChange, onBlur} = this.props;
 			const handleBlur = (e) => {
-				console.log('handleblur ');
 				onBlur(e);
 			}
 		
@@ -16,5 +14,11 @@ const TextInput = React.createClass({
 			</FormField>
 			);
 	}
-});
-export default TextInput;
+}
+TextInput.protoTypes = {
+    label: PropTypes.string, 
+    name: PropTypes.string, 
+    value: PropTypes.string, 
+    onChange: PropTypes.func, 
+    onBlur: PropTypes.func
+};

@@ -46,22 +46,20 @@ var json = {
 ///////////reducer//////////////
 
 const courseInfo = (state= json.courseInfo, action) => {
-	console.log(action);
+
 	switch(action.type){
 		case 'UPDATE_COVERINFO':
 			var result = {...state,  [action.keyValue.name]: action.keyValue.value };
-			console.log(result);
 			return result;
 		default:
 			return state;
 	}  
 }
 const printDetails = (state= json.printDetails, action) => {
-	console.log(action);
+
 	switch(action.type){
 		case 'UPDATE_PRINTDETAILS':
 			var result = {...state,  [action.keyValue.name]: action.keyValue.value };
-			console.log(result);
 			return result;
 		default:
 			return state;
@@ -82,6 +80,5 @@ const formState = (state= {currentForm:'CourseInfoForm'}, action) => {
 const {createStore, combineReducers} = Redux;
 const coursePackApp = combineReducers({courseInfo, printDetails,formState});
 var store = createStore(coursePackApp);
-console.log(store.getState(), "get state");
 store.subscribe(render);
 render();

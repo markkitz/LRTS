@@ -22,7 +22,6 @@ var CourseInfoForm = React.createClass(
 	},
 	render: function() {
 		const {onPrevious, onNext,visibleForm} = this.props;
-		console.log(visibleForm, this.props);
 		return (
 		<SubForm heading={'Course Pack Info'} isVisible={visibleForm=='CourseInfoForm'} onPrevious ={onPrevious} onNext = {onNext}>
 			<TextInput label="coursePackNumber:" name="coursePackNumber" value={this.state.coursePackNumber} onChange={this.setVariable}  onBlur = {this.saveState}  />
@@ -68,7 +67,7 @@ var SubForm = React.createClass(
 		render:	function(){
 			let {heading, isVisible, onPrevious, onNext} = this.props;
 			
-			console.log(onPrevious);
+
 			if(isVisible)
 			{
 				return(				
@@ -113,7 +112,6 @@ const App = React.createClass({
 	},
 	visibleForm: 'CourseInfoForm',
 	render: function(){
-		console.log(this.VisibleForm);
 		return(
 		<div>
 			<CourseInfoForm visibleForm={this.visibleForm}  courseInfo={json.coursePack.courseInfo} onPrevious ={this.onPrevious} onNext = {this.onNext}   />

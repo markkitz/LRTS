@@ -111,7 +111,6 @@ const SubForm = React.createClass({
 
 const Test1Comp = ({state}) => {
 	var test = 123;
-	console.log(state);
 	return(		
 		<form className="form-horizontal"  >						
 				<CoverInformation coursePack={state} />	
@@ -154,9 +153,7 @@ function logChange(val) {
 ///////////reducer//////////////
 
 const coursePack = (state= json, action) => {
-	console.log(action);
-	
-	console.log(result);
+
 	switch(action.type){
 		case 'UPDATE_COVERINFO':
 			var result = {...state, coursePackVersion: {...state.coursePackVersion, coursePackNumber: action.values.coursePackNumber, title: action.values.title }};
