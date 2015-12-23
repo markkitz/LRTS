@@ -2,7 +2,6 @@
   "name": "lrts",
   "version": "1.0.0",
   "description": "A test of react and redux.",
-  "main": "./src/index.jsx",
   "scripts": {
     "start": "webpack-dev-server ./src/index.jsx --content-base src",
     "test": "echo \"Error: no test specified\" && exit 1"

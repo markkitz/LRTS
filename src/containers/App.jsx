@@ -1,6 +1,6 @@
 const React = require('react');
-import CourseInfoForm  from '../components/CourseInfoForm.jsx'
-import PrintDetailsForm  from '../components/PrintDetailsForm.jsx'
+import CourseInfoForm  from './CourseInfoForm.jsx'
+import PrintDetailsForm  from './PrintDetailsForm.jsx'
 const App = React.createClass({
 
 	visibleForm: 'CourseInfoForm',
