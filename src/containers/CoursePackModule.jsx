@@ -3,7 +3,7 @@ import CourseInfoForm  from './CourseInfoForm.jsx'
 import PrintDetailsForm  from './PrintDetailsForm.jsx'
 import MenuBarContainer from './MenuBarContainer.jsx'
 import UploadForm from './UploadForm.jsx'
-const App = React.createClass({
+const CoursePackModule = React.createClass({
 
 	visibleForm: 'CourseInfoForm',
 	render: function(){
@@ -17,5 +17,5 @@ const App = React.createClass({
 	}	
 });
 
-export default App;
+export default CoursePackModule;
 
