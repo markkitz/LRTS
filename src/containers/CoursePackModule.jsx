@@ -7,8 +7,10 @@ const CoursePackModule = React.createClass({
 
 	visibleForm: 'CourseInfoForm',
 	render: function(){
+        const id = this.props.id;
 		return(
-		<div>
+		<div className="cpm">
+        <h2>{id}</h2>
             <MenuBarContainer />
 			<CourseInfoForm  />
 			<PrintDetailsForm />

@@ -4,7 +4,7 @@ let MenuBar = ({menuItems, currentItem, menuBarClickHandler}) => {
             {menuItems.map(i => {
                 let isSelected = currentItem == i.key;
                 
-                return (isSelected? <span className={'selected'}>{i.value}</span> : <span onClick={() => menuBarClickHandler(i.key)}>{i.value}</span>	)})
+                return (isSelected? <span key={'menubar_' + i.key }  className={'selected'}>{i.value}</span> : <span key={'menubar_' + i.key }  onClick={() => menuBarClickHandler(i.key)}>{i.value}</span>	)})
             }
         </div>);
 }

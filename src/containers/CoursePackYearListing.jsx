@@ -1,8 +1,14 @@
 const React = require('react');
 const {connect} = require('react-redux');
-let CoursePackYearListing =({years, selectedYearId, selectCoursePackYearHandler}) => {
+import CoursePackModule from './CoursePackModule.jsx'
+
+let CoursePackYearListing =({isLoaded, years, selectedYearId, selectCoursePackYearHandler}) => {
+    console.log('isLoaded', isLoaded)
+    if(!isLoaded) {
+        return <h2>loading</h2>;
+    }
     var yearsHTML = years.map(y => {
-        return <CoursePackYear id={y.id} year ={y.year} terms={y.terms} selectedYearId={selectedYearId} selectCoursePackYearHandler={selectCoursePackYearHandler}/>;
+        return <CoursePackYear key={'coursePackYear_' + y.id } id={y.id} year ={y.year} terms={y.terms} selectedYearId={selectedYearId} selectCoursePackYearHandler={selectCoursePackYearHandler}/>;
     });
     return( <div><h2>hello from listing</h2>
     {yearsHTML}
@@ -11,8 +17,8 @@ let CoursePackYearListing =({years, selectedYearId, selectCoursePackYearHandler}
 };
 CoursePackYearListing = connect(
     (state) => {
-        console.log(state);
-        return {years: state.coursePackYearListing.years, selectedYearId:state.coursePackYearListing.selectedYearId};
+        console.log("LISTING STATE", state);
+        return {isLoaded:state.coursePackYearListing.isLoaded, years: state.coursePackYearListing.years, selectedYearId:state.coursePackYearListing.selectedYearId};
     },
     (dispatch) => {
         const selectCoursePackYearHandler = (yearId) => {
@@ -25,7 +31,7 @@ CoursePackYearListing = connect(
 const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHandler}) => {
   return   (
       <div>
-        {id == selectedYearId ? (<div>test</div>) : 
+        {id == selectedYearId ? (<CoursePackModule id={id} >test</CoursePackModule>) : 
         (<div onClick={() => selectCoursePackYearHandler(id)}>
         <table className='cpyl-table'>
             <tbody>            

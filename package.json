@@ -30,5 +30,9 @@
     "redux": "^3.0.5",
     "redux-thunk": "^1.0.2",
     "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "es6-promise": "^3.0.2",
+    "isomorphic-fetch": "^2.2.0"
   }
 }

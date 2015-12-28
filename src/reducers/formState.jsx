@@ -16,8 +16,9 @@ const getNextForm = (currentForm) => {
   }  
   return currentForm;
 };
+var coursePackYearListingState = {isLoaded:false};
 
-const formState = (state= {currentForm:'CourseInfoForm', forms:forms}, action) => {
+const formState = (state= {currentForm:'CourseInfoForm', coursePackYearListingState:coursePackYearListingState, forms:forms}, action) => {
 	switch(action.type){
 		case 'PREVIOUS_CLICK':
 			return {...state, currentForm:getPreviousForm(action.form)};
