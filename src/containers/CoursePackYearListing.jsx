@@ -17,7 +17,7 @@ let CoursePackYearListing =({isLoaded, years, selectedYearId, selectCoursePackYe
 };
 CoursePackYearListing = connect(
     (state) => {
-        console.log("LISTING STATE", state);
+        
         return {isLoaded:state.coursePackYearListing.isLoaded, years: state.coursePackYearListing.years, selectedYearId:state.coursePackYearListing.selectedYearId};
     },
     (dispatch) => {
@@ -31,7 +31,7 @@ CoursePackYearListing = connect(
 const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHandler}) => {
   return   (
       <div>
-        {id == selectedYearId ? (<CoursePackModule id={id} >test</CoursePackModule>) : 
+        {id == selectedYearId ? (<CoursePackTerms id={id} terms={terms}>test</CoursePackTerms>) : 
         (<div onClick={() => selectCoursePackYearHandler(id)}>
         <table className='cpyl-table'>
             <tbody>            
@@ -47,4 +47,32 @@ const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHan
     </div>)
   ;
 };
+
+let CoursePackTerms = ({terms}) => {
+    console.log(terms);
+    let coursePackTermList = terms.map( t => { 
+        console.log(t.isLoaded);
+        return <CoursePackTerm term={t}/>})
+    return (
+        <div>{coursePackTermList}</div>
+    )
+}
+let CoursePackTerm = ({term, checkIfSelected, dispatch}) => {
+    var isSelected =  checkIfSelected(term.id);
+    console.log(term.id, isSelected);
+    return isSelected ? 
+     <CoursePackModule id={term.id}/> :
+     <div onClick={() => dispatch({type:"SELECT_TERM", termId:term.id})}>{term.term}</div>
+}
+
+CoursePackTerm = connect(
+    (state) => {
+        const checkIfSelected = (id) => { return id == state.coursePackYearListing.selectedTerm;};
+        return {checkIfSelected};
+    }
+)(CoursePackTerm);
+
+
+
+
 export default CoursePackYearListing;

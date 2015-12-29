@@ -22,7 +22,7 @@ const render = () => {
 	);	
 };
 
-setTimeout(function(){ store.dispatch(actions.loadCoursePackYearListing())}, 2000);
+setTimeout(function(){ store.dispatch(actions.loadCoursePackYearListing())}, 500);
 
 const {Provider} = ReactRedux;
 const {createStore, combineReducers, applyMiddleware} = Redux;
