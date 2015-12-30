@@ -5,7 +5,7 @@ import SubForm  from '../components/Subform.jsx'
 
 const UploadForm = connect (
  (state) => {
-         return   {currentForm:state.formState.currentForm};
+         return   {currentForm:state.coursePackModule.currentForm};
     },
     (dispatch) => {
         return { 

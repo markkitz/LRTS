@@ -3,21 +3,30 @@ import CourseInfoForm  from './CourseInfoForm.jsx'
 import PrintDetailsForm  from './PrintDetailsForm.jsx'
 import MenuBarContainer from './MenuBarContainer.jsx'
 import UploadForm from './UploadForm.jsx'
-const CoursePackModule = React.createClass({
+const {connect} = require('react-redux');
+import '../css/course-pack-module.css'
 
-	visibleForm: 'CourseInfoForm',
-	render: function(){
-        const id = this.props.id;
+let CoursePackModule = ({id, isLoaded, unselect}) => {
+	console.log(id)
+
 		return(
+			isLoaded == false ? <h2>loading</h2>: 
 		<div className="cpm">
-        <h2>{id}</h2>
+			<div className={'cpm-hdr'} onClick={() => unselect()} >test</div>
             <MenuBarContainer />
 			<CourseInfoForm  />
 			<PrintDetailsForm />
             <UploadForm />
 		</div>);
-	}	
-});
-
+};
+CoursePackModule = connect(
+	(state) => {return {isLoaded:state.coursePackModule.isLoaded};},
+	(dispatch) => {
+		 const unselect = () => dispatch({type:'UNSELECT_COURSE_PACK_TERM'})
+		 return {unselect}
+        }
+		
+		
+	)(CoursePackModule);
 export default CoursePackModule;
 

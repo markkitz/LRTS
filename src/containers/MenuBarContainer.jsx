@@ -8,7 +8,7 @@ let MenuBarContainer = ({menuItems, currentForm, menuBarClickHandler}) => {
 
 MenuBarContainer = connect (
     (state) => {
-        let {forms, currentForm} = state.formState        
+        let {forms, currentForm} = state.coursePackModule        
         return {menuItems:forms, currentForm};
     },
     (dispatch) => {

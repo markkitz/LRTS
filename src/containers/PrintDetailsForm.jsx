@@ -6,7 +6,7 @@ import SubForm  from '../components/Subform.jsx'
 
 const PrintDetailsForm = connect (
      (state) => {
-         return   {visibleForm:state.formState.currentForm, model:state.printDetails };
+         return   {visibleForm:state.coursePackModule.currentForm, model:state.coursePackModule.formData.printDetails };
     },
     (dispatch) => {
         return { 

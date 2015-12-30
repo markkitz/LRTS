@@ -1,4 +1,5 @@
 const React = require('react');
+import '../css/menu-bar.css'
 let MenuBar = ({menuItems, currentItem, menuBarClickHandler}) => {
     return (<div className="mk-menu-bar">
             {menuItems.map(i => {

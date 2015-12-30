@@ -5,7 +5,8 @@ import SubForm  from '../components/Subform.jsx'
 
 const CourseInfoForm = connect (
      (state) => {
-         return   {currentForm:state.formState.currentForm, model:state.courseInfo };
+         console.log(state);
+         return   {currentForm:state.coursePackModule.currentForm, model:state.coursePackModule.formData.courseInfo };
     },
     (dispatch) => {
         return { 
