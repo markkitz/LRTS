@@ -1,0 +1,11 @@
+const React = require('react');
+const {connect} = require('react-redux');
+import CoursePackYearListing from '../containers/CoursePackYearListing.js'
+
+let HomeView = () => {
+  return (<div>
+          <h1>Home</h1>
+          <CoursePackYearListing/>
+        </div>)
+}
+export default HomeView

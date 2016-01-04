@@ -1,15 +1,15 @@
 const React = require('react');
 const {connect} = require('react-redux');
-import TextInput  from '../components/TextInput.jsx'
-import SubForm  from '../components/Subform.jsx'
+import TextInput  from '../components/TextInput.js'
+import SubForm  from '../components/Subform.js'
 
 const CourseInfoForm = connect (
      (state) => {
          return   {currentForm:state.coursePackModule.currentForm, model:state.coursePackModule.formData.courseInfo };
     },
     (dispatch) => {
-        return { 
-            dispatchSetVariable: (name, value) => {dispatch({type:'UPDATE_COVERINFO', keyValue:{name, value} }); } 
+        return {
+            dispatchSetVariable: (name, value) => {dispatch({type:'UPDATE_COVERINFO', keyValue:{name, value} }); }
             };
     })
     (({currentForm, model, dispatchSetVariable}) =>
@@ -25,7 +25,7 @@ const CourseInfoForm = connect (
                 <TextInput label="coursePackNumber:" name="coursePackNumber" value={model.coursePackNumber} onChange={setVariable}  onBlur = {saveState}  />
                 <TextInput label="title:" name="title" value={model.title} onChange={setVariable}  onBlur = {saveState}  />
                 <TextInput label="subtitle:" name="subtitle" value={model.subtitle} onChange={setVariable}  onBlur = {saveState}  />
-            </SubForm>);            
+            </SubForm>);
         }
 );
 

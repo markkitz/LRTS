@@ -1,7 +1,7 @@
 const React = require('react');
 const {connect} = require('react-redux');
 const actions = require('../actions/actions.js');
-import CoursePackModule from './CoursePackModule.jsx'
+import CoursePackModule from './CoursePackModule.js'
 import '../css/course-pack-terms.css'
 
 let CoursePackTerms = ({terms}) => {
@@ -10,7 +10,7 @@ let CoursePackTerms = ({terms}) => {
 }
 let CoursePackTerm = ({term, checkIfSelected, selectTerm}) => {
     var isSelected =  checkIfSelected(term.id);
-    return isSelected ? 
+    return isSelected ?
      <CoursePackModule id={term.id}/> :
      <div className='cpt' onClick={() => {selectTerm(term.id)} }>{term.term}</div>
 }
@@ -22,9 +22,9 @@ CoursePackTerm = connect(
     },
     (dispatch) => {
         const selectTerm = (id) => {
-            
+
             dispatch({type:"SELECT_TERM", termId:id});
-            
+
             dispatch(actions.loadCoursePackModuleFormForTerm(id));
         }
         return {selectTerm};

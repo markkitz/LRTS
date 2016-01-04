@@ -1,14 +1,15 @@
 module.exports = {
-	entry: './src/index.jsx',
+	entry: './src/main.js',
 	output: {
 		path: __dirname,
 		filename: 'bundle.js'
 	},
+	resolve: {root: './src'},
     devtool: 'inline-source-map',
 	module: {
 		loaders: [
 			{
-			test: /\.jsx?$/,
+			test: /\.js?$/,
 			exclude: /node_modules/,
 			loader: 'babel',
 			query: {

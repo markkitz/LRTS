@@ -1,14 +1,14 @@
 const React = require('react');
-import CourseInfoForm  from './CourseInfoForm.jsx'
-import PrintDetailsForm  from './PrintDetailsForm.jsx'
-import MenuBarContainer from './MenuBarContainer.jsx'
-import UploadForm from './UploadForm.jsx'
+import CourseInfoForm  from './CourseInfoForm.js'
+import PrintDetailsForm  from './PrintDetailsForm.js'
+import MenuBarContainer from './MenuBarContainer.js'
+import UploadForm from './UploadForm.js'
 const {connect} = require('react-redux');
 import '../css/course-pack-module.css'
 
 let CoursePackModule = ({id, isLoaded, unselect, formName}) => {
 		return(
-			isLoaded == false ? <h2>loading</h2>: 
+			isLoaded == false ? <h2>loading</h2>:
 		<div className="cpm">
 			<div className={'cpm-hdr'} onClick={() => unselect()} >{formName}</div>
             <MenuBarContainer />
@@ -28,8 +28,7 @@ CoursePackModule = connect(
 		 const unselect = () => dispatch({type:'UNSELECT_COURSE_PACK_TERM'})
 		 return {unselect}
         }
-		
-		
+
+
 	)(CoursePackModule);
 export default CoursePackModule;
-

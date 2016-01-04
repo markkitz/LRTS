@@ -1,21 +1,24 @@
 {
-  "name": "lrts",
+  "name": "routertest",
   "version": "1.0.0",
-  "description": "A test of react and redux.",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server ./src/index.jsx --content-base src",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/markkitz/LRTS.git"
+    "start": "webpack-dev-server ./src/main.js --content-base src"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/markkitz/LRTS/issues"
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.0",
+    "react": "^0.14.5",
+    "react-dom": "^0.14.5",
+    "react-redux": "^4.0.6",
+    "redux": "^3.0.5",
+    "redux-thunk": "^1.0.3",
+    "uniloc": "^0.2.0",
+    "webpack": "^1.12.9",
+    "style-loader": "^0.13.0"
   },
-  "homepage": "https://github.com/markkitz/LRTS#readme",
   "devDependencies": {
     "babel-core": "^6.3.17",
     "babel-loader": "^6.2.0",
@@ -23,18 +26,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-2": "^6.3.13",
     "css-loader": "^0.23.1",
-    "express": "^4.13.3",
     "react-bootstrap": "^0.28.1",
-    "react-dom": "^0.14.3",
-    "react-redux": "^4.0.2",
-    "react-select": "^0.9.1",
-    "redux": "^3.0.5",
-    "redux-thunk": "^1.0.2",
-    "style-loader": "^0.13.0",
     "webpack-dev-server": "^1.14.0"
-  },
-  "dependencies": {
-    "es6-promise": "^3.0.2",
-    "isomorphic-fetch": "^2.2.0"
   }
 }

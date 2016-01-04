@@ -1,6 +1,6 @@
 const React = require('react');
 const {connect} = require('react-redux');
-import CoursePackYear from './CoursePackYear.jsx'
+import CoursePackYear from './CoursePackYear.js'
 
 
 let CoursePackYearListing =({isLoaded, years, selectedYearId, selectCoursePackYearHandler, unselectCoursePackYearHandler}) => {
@@ -16,7 +16,7 @@ let CoursePackYearListing =({isLoaded, years, selectedYearId, selectCoursePackYe
 };
 CoursePackYearListing = connect(
     (state) => {
-        
+
         return {isLoaded:state.coursePackYearListing.isLoaded, years: state.coursePackYearListing.years, selectedYearId:state.coursePackYearListing.selectedYearId};
     },
     (dispatch) => {

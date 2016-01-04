@@ -1,5 +1,5 @@
 const React = require('react');
-import CoursePackTerms from './CoursePackTerms.jsx'
+import CoursePackTerms from './CoursePackTerms.js'
 import '../css/course-pack-year.css'
 
 const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHandler, unselectCoursePackYearHandler}) => {
@@ -14,10 +14,10 @@ const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHan
                 </div>
                     <h2>test</h2>
                     <CoursePackTerms  id={id} terms={terms}/>
-                </div>) : 
+                </div>) :
             (<div className='cpy'  onClick={() => selectCoursePackYearHandler(id)}>
             <table className='cpy-table'>
-                <tbody>            
+                <tbody>
                     <tr>
                         <td>{year}</td>
                         {tdTerms}

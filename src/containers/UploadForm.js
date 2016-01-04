@@ -1,15 +1,15 @@
 const React = require('react');
 const {connect} = require('react-redux');
-import TextInput  from '../components/TextInput.jsx'
-import SubForm  from '../components/Subform.jsx'
+import TextInput  from '../components/TextInput.js'
+import SubForm  from '../components/Subform.js'
 
 const UploadForm = connect (
  (state) => {
          return   {currentForm:state.coursePackModule.currentForm};
     },
     (dispatch) => {
-        return { 
-            UploadFileHandler: () => {console.log('upload'); } 
+        return {
+            UploadFileHandler: () => {console.log('upload'); }
             };
     })
     (({currentForm, UploadFileHandler}) =>
@@ -18,7 +18,7 @@ const UploadForm = connect (
                     <SubForm heading={'Upload Document'} isVisible={currentForm=='UploadForm'}  form={'UploadForm'}>
 			             <div>hi</div>
 		              </SubForm>
-           );            
+           );
         }
 );
 
