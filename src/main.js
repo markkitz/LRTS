@@ -5,7 +5,7 @@ const Redux = require('redux')
 const thunk = require('redux-thunk')
 const {connect} = require('react-redux')
 import {Router, routeHashWatcher} from './router'
-import {routes, routeViews} from './routes.js'
+import {routes, routeViews, routeTitles} from './routes.js'
 ///// reducers //////////////
 import navigationReducer from './reducers/navigationReducer.js'
 import coursePackModule from './reducers/coursePackModule.js'
@@ -21,10 +21,10 @@ const render = () => {
 	ReactDOM.render(
         (<Provider store={store}>
           <div>
-              <NavHeaderBar />
+              <NavHeaderBar routeTitles={routeTitles} />
               <NavPanel />
               <div className='cnt-bdy'>
-                <Router routes={routes} routeViews={routeViews} />
+                <Router routes={routes} routeViews={routeViews} routeTitles={routeTitles} />
               </div>
           </div>
         </Provider>)

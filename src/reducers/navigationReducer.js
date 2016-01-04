@@ -4,11 +4,9 @@ function navigationReducer(state = {
 }, action) {
   switch (action.type) {
     case 'NAVIGATION/COMPLETE':
-    console.log(action)
       return {
         routeName: action.route.name,
       }
-
     default:
       return state
   }
