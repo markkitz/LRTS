@@ -26,8 +26,8 @@
     width:100%;
 }
 .cpy-table td{
-    border:1px solid black;
-    padding:10px;    
+    border:1px solid #ddd;
+    padding:10px;
 }
 .cpy-close-btn{
     float:right;
