@@ -22,12 +22,12 @@ const coursePackModule = (state= {currentForm:'CourseInfoForm', isLoaded:false, 
 			return {...state, currentForm:getPreviousForm(action.form)};
 		case 'NEXT_CLICK':
 			return {...state, currentForm:getNextForm(action.form)};
-    case 'NAVIGATE_TO_FORM':
-      return {...state, currentForm:action.form};
-    case 'LOAD_COURSE_MODULE_FOR_TERM':
-      return {...state, formData:action.formData, isLoaded:true};
-    case 'UPDATE_COVERINFO':
-	case 'UPDATE_PRINTDETAILS':
+		case 'NAVIGATE_TO_FORM':
+			return {...state, currentForm:action.form};
+		case 'LOAD_COURSE_MODULE_FOR_TERM':
+			return {...state, formData:action.formData, isLoaded:true, currentForm:state.forms[0].key};
+		case 'UPDATE_COVERINFO':
+		case 'UPDATE_PRINTDETAILS':
 			return  {...state, formData: formData(state.formData, action) };
 	
 		default:

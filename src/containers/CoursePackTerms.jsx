@@ -5,13 +5,11 @@ import CoursePackModule from './CoursePackModule.jsx'
 import '../css/course-pack-terms.css'
 
 let CoursePackTerms = ({terms}) => {
-    console.log(terms);
     let coursePackTermList = terms.map( t => { return <CoursePackTerm key={'coursePackTerm_' + t.id} term={t}/>});
     return (<div>{coursePackTermList}</div> )
 }
 let CoursePackTerm = ({term, checkIfSelected, selectTerm}) => {
     var isSelected =  checkIfSelected(term.id);
-    console.log(term.id, isSelected);
     return isSelected ? 
      <CoursePackModule id={term.id}/> :
      <div className='cpt' onClick={() => {selectTerm(term.id)} }>{term.term}</div>

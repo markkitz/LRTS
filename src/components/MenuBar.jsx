@@ -1,7 +1,7 @@
 const React = require('react');
 import '../css/menu-bar.css'
 let MenuBar = ({menuItems, currentItem, menuBarClickHandler}) => {
-    return (<div className="mk-menu-bar">
+    return (<div className="menubar">
             {menuItems.map(i => {
                 let isSelected = currentItem == i.key;
                 

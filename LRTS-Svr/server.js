@@ -42,8 +42,9 @@ router.route('/coursePackYears')
     .get(function(req, res) {
         var termId =1;
         const years = {years : [
-            {id:1, year:'2015-16', terms:[{id: termId++, term:'Summer', isLoaded:false}, {id: termId++, term:'Fall', isLoaded:false}]},
-            {id:2, year:'2014-15', terms:[{id: termId++, term:'Summer', isLoaded:false}, {id: termId++, term:'Fall', isLoaded:false}]}
+            {id:1, year:'2015-16', terms:[{id: termId++, term:'Summer'}, {id: termId++, term:'Fall'}, {id: termId++, term:'Winter'}, {id: termId++, term:'Spring'}]},
+            {id:2, year:'2014-15', terms:[{id: termId++, term:'Summer'}, {id: termId++, term:'Fall'}, {id: termId++, term:'Winter'}, {id: termId++, term:'Spring'}]},
+            {id:3, year:'2013-14', terms:[{id: termId++, term:'Summer'}, {id: termId++, term:'Fall'}, {id: termId++, term:'Winter'}, {id: termId++, term:'Spring'}]}
             ]};
        res.json(years);
     });

@@ -3,7 +3,6 @@ import CoursePackTerms from './CoursePackTerms.jsx'
 import '../css/course-pack-year.css'
 
 const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHandler, unselectCoursePackYearHandler}) => {
-    console.log(terms);
     let tdTerms = terms.map(t => {
         return <td key={'tdTerm_' + t.id}>{t.term}</td>});
     return   (

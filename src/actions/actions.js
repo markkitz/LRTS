@@ -18,7 +18,6 @@ export function loadCoursePackYearListing() {
 }
 
 export function loadCoursePackModuleFormForTerm(termId) {
-	console.log('hit !!!' +termId);
 	return dispatch => {
 		return fetch("http://localhost:6969/api/terms?termId=" + termId).then(response => response.json())
 		.then(json =>{

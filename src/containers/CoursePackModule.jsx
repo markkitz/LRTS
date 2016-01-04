@@ -6,13 +6,11 @@ import UploadForm from './UploadForm.jsx'
 const {connect} = require('react-redux');
 import '../css/course-pack-module.css'
 
-let CoursePackModule = ({id, isLoaded, unselect}) => {
-	console.log(id)
-
+let CoursePackModule = ({id, isLoaded, unselect, formName}) => {
 		return(
 			isLoaded == false ? <h2>loading</h2>: 
 		<div className="cpm">
-			<div className={'cpm-hdr'} onClick={() => unselect()} >test</div>
+			<div className={'cpm-hdr'} onClick={() => unselect()} >{formName}</div>
             <MenuBarContainer />
 			<CourseInfoForm  />
 			<PrintDetailsForm />
@@ -20,7 +18,12 @@ let CoursePackModule = ({id, isLoaded, unselect}) => {
 		</div>);
 };
 CoursePackModule = connect(
-	(state) => {return {isLoaded:state.coursePackModule.isLoaded};},
+	(state) => {
+		const currentForm = state.coursePackModule.forms.find(f => f.key == state.coursePackModule.currentForm);
+		return {
+		isLoaded:state.coursePackModule.isLoaded,
+		formName:currentForm.value
+		};},
 	(dispatch) => {
 		 const unselect = () => dispatch({type:'UNSELECT_COURSE_PACK_TERM'})
 		 return {unselect}

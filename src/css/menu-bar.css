@@ -1,9 +1,8 @@
-.mk-menu-bar {
+.menubar {
     margin: 10px;
     padding-left: 20px;
 }
-
-.mk-menu-bar span {
+.menubar span {
     border-bottom: 2px solid transparent;
     color: #737373;
     display: inline-block;
@@ -22,23 +21,23 @@
     white-space: nowrap;
     cursor: pointer;
 }
-    .mk-menu-bar > .selected {
-        -moz-transition: border-color .218s;
-        -o-transition: border-color .218s;
-        -webkit-transition: border-color .218s;
-        transition: border-color .218s;
-        border-color: #427fed;
-        color: #262626;
-        text-decoration: none;
-        font-weight: bold;
-        cursor: default;
-    }
-        .mk-menu-bar > span:hover {
-        -moz-transition: border-color .218s,color .218s;
-        -o-transition: border-color .218s,color .218s;
-        -webkit-transition: border-color .218s,color .218s;
-        transition: border-color .218s,color .218s;
-        border-color: #427fed;
-        color: #262626;
-        text-decoration: none;
-    }
+.menubar > .selected {
+    -moz-transition: border-color .218s;
+    -o-transition: border-color .218s;
+    -webkit-transition: border-color .218s;
+    transition: border-color .218s;
+    border-color: #427fed;
+    color: #262626;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: default;
+}
+.menubar > span:hover {
+    -moz-transition: border-color .218s,color .218s;
+    -o-transition: border-color .218s,color .218s;
+    -webkit-transition: border-color .218s,color .218s;
+    transition: border-color .218s,color .218s;
+    border-color: #427fed;
+    color: #262626;
+    text-decoration: none;
+}

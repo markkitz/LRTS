@@ -4,11 +4,11 @@ import CoursePackYear from './CoursePackYear.jsx'
 
 
 let CoursePackYearListing =({isLoaded, years, selectedYearId, selectCoursePackYearHandler, unselectCoursePackYearHandler}) => {
-    console.log('isLoaded', isLoaded)
+
     if(!isLoaded) {
         return <h2>loading</h2>;
     }
-    console.log(CoursePackYear)
+
     var yearsHTML = years.map(y => {
         return <CoursePackYear key={'coursePackYear_' + y.id } id={y.id} year ={y.year} terms={y.terms} selectedYearId={selectedYearId} selectCoursePackYearHandler={selectCoursePackYearHandler} unselectCoursePackYearHandler={unselectCoursePackYearHandler}/>;
     });
