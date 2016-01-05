@@ -3,7 +3,7 @@ const {connect} = require('react-redux');
 import TextInput  from '../../components/TextInput.js'
 import SubForm  from '../../components/Subform.js'
 
-const UploadForm = connect (
+const CoursePackUploadForm = connect (
  (state) => {
          return   {currentForm:state.coursePackModule.currentForm};
     },
@@ -15,7 +15,7 @@ const UploadForm = connect (
     (({currentForm, UploadFileHandler}) =>
         {
             return (
-                    <SubForm heading={'Upload Document'} isVisible={currentForm=='UploadForm'}  form={'UploadForm'}>
+                    <SubForm heading={'Upload Document'} isVisible={currentForm=='CoursePackUploadForm'}  form={'CoursePackUploadForm'}>
 			             <div>hi</div>
 		              </SubForm>
            );
@@ -23,4 +23,4 @@ const UploadForm = connect (
 );
 
 
-export default UploadForm;
+export default CoursePackUploadForm;

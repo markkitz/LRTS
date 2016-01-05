@@ -4,7 +4,7 @@ const {connect} = ReactRedux;
 import TextInput  from '../../components/TextInput.js'
 import SubForm  from '../../components/Subform.js'
 
-const PrintDetailsForm = connect (
+const CoursePackPrintDetailsForm = connect (
      (state) => {
          return   {visibleForm:state.coursePackModule.currentForm, model:state.coursePackModule.formData.printDetails };
     },
@@ -22,7 +22,7 @@ const PrintDetailsForm = connect (
             };
             const saveState = () =>{};
             return (
-                    <SubForm heading={'Print Details'} isVisible={visibleForm=='PrintDetailsForm'}  form={'PrintDetailsForm'}>
+                    <SubForm heading={'Print Details'} isVisible={visibleForm=='CoursePackPrintDetailsForm'}  form={'CoursePackPrintDetailsForm'}>
 			<TextInput label="field1:" name="field1" value={model.field1} onChange={setVariable}  onBlur = {saveState}  />
 		  </SubForm>
            );
@@ -30,4 +30,4 @@ const PrintDetailsForm = connect (
 );
 
 
-export default PrintDetailsForm;
+export default CoursePackPrintDetailsForm;

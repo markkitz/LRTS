@@ -2,12 +2,14 @@ const React = require('react');
 const uniloc = require('uniloc')
 import Viewtest from './views/Viewtest.js'
 import HomeView from './views/HomeView.js'
+import CoursePacksView from './views/CoursePacksView'
 
 
 var routeInfo = [
   {routeType:'root', routePath:'GET /', view: <HomeView />, title:'Home'  },
     {routeType:'homeRoute', routePath:'GET /home', view: <HomeView />, title:'Home'},
-    {routeType:'viewtestRoute', routePath:'GET /viewtest', view: <Viewtest />, title:'View Test'  }
+    {routeType:'viewtestRoute', routePath:'GET /viewtest', view: <Viewtest />, title:'View Test'  },
+    {routeType:'coursePacksRoute', routePath:'GET /coursepacks', view: <CoursePacksView />, title:'Course Packs'}
 ];
 
 var routePath = {};

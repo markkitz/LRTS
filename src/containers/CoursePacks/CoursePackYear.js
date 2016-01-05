@@ -4,9 +4,9 @@ import '../../css/course-pack-year.css'
 
 const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHandler, unselectCoursePackYearHandler}) => {
     let tdTerms = terms.map(t => {
-        return <td key={'tdTerm_' + t.id}>{t.term}</td>});
-    return   (
-        <div>
+        return <td key={'tdTerm_' + t.id}>{t.term}</td>}
+      );
+    return(<div>
             {id == selectedYearId ? (
                 <div className='cpy-selected'>
                 <div className='cpy-close-btn' onClick={() => unselectCoursePackYearHandler()}>

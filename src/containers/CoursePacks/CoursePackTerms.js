@@ -11,7 +11,7 @@ let CoursePackTerms = ({terms}) => {
 let CoursePackTerm = ({term, checkIfSelected, selectTerm}) => {
     var isSelected =  checkIfSelected(term.id);
     return isSelected ?
-     <CoursePackModule id={term.id}/> :
+     <CoursePackModule id={term.id} termName={term.term} /> :
      <div className='cpt' onClick={() => {selectTerm(term.id)} }>{term.term}</div>
 }
 

@@ -12,7 +12,6 @@ let SubForm = ({heading, isVisible, children, form, dispatch}) => {
     {
         return(
             <div className='sf'>
-                <h2>{heading}</h2>
                 {children}
                 <PrevNextNav onPrevious ={handleOnPrevious} onNext = {handleOnNext} />
             </div>

@@ -3,7 +3,7 @@ const {connect} = require('react-redux');
 import TextInput  from '../../components/TextInput'
 import SubForm  from '../../components/Subform'
 
-const CourseInfoForm = connect (
+const CoursePackInfoForm = connect (
      (state) => {
          return   {currentForm:state.coursePackModule.currentForm, model:state.coursePackModule.formData.courseInfo };
     },
@@ -21,7 +21,7 @@ const CourseInfoForm = connect (
             };
             const saveState = () =>{};
             return (
-            <SubForm heading={'Course Pack Info'} isVisible={currentForm=='CourseInfoForm'} form={'CourseInfoForm'}>
+            <SubForm heading={'Course Pack Info'} isVisible={currentForm=='CoursePackInfoForm'} form={'CoursePackInfoForm'}>
                 <TextInput label="coursePackNumber:" name="coursePackNumber" value={model.coursePackNumber} onChange={setVariable}  onBlur = {saveState}  />
                 <TextInput label="title:" name="title" value={model.title} onChange={setVariable}  onBlur = {saveState}  />
                 <TextInput label="subtitle:" name="subtitle" value={model.subtitle} onChange={setVariable}  onBlur = {saveState}  />
@@ -30,4 +30,4 @@ const CourseInfoForm = connect (
 );
 
 
-export default CourseInfoForm;
+export default CoursePackInfoForm;

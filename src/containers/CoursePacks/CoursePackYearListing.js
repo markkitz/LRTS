@@ -1,11 +1,13 @@
 const React = require('react');
 const {connect} = require('react-redux');
+const actions = require('../../actions/actions.js');
 import CoursePackYear from './CoursePackYear.js'
 
 
-let CoursePackYearListing =({isLoaded, years, selectedYearId, selectCoursePackYearHandler, unselectCoursePackYearHandler}) => {
+let CoursePackYearListing =({isLoaded, years, selectedYearId, selectCoursePackYearHandler, unselectCoursePackYearHandler, loadCoursePackYearListing}) => {
 
     if(!isLoaded) {
+      console.log(loadCoursePackYearListing());
         return <h2>loading</h2>;
     }
 
@@ -26,7 +28,10 @@ CoursePackYearListing = connect(
         const unselectCoursePackYearHandler = () => {
             dispatch({type:'UNSELECT_COURSE_PACK_YEAR'})
         }
-        return { selectCoursePackYearHandler, unselectCoursePackYearHandler };
+        const loadCoursePackYearListing = () => {
+            dispatch(actions.loadCoursePackYearListing())
+        }
+        return { selectCoursePackYearHandler, unselectCoursePackYearHandler, loadCoursePackYearListing };
     }
 )(CoursePackYearListing);
 export default CoursePackYearListing;

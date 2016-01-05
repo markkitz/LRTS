@@ -1,7 +1,6 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
-const Redux = require('redux')
-const ReactRedux = require('react-redux')
+const {Provider} = require('react-redux')
 import {Router, routeHashWatcher} from './router'
 import {routes, routeViews, routeTitles} from './routes.js'
 ///// containers ////////////
@@ -12,14 +11,13 @@ import DevTools from './containers/DevTools'
 ///// actions ///////////////
 const actions = require('./actions/actions')
 
-const {Provider} = ReactRedux;
 const store = configureStore();
+console.log("STATE", store.getState())
 
 routeHashWatcher.watch(store.dispatch, routes)
-setTimeout(function(){ store.dispatch(actions.loadCoursePackYearListing())}, 500);
+//setTimeout(function(){ store.dispatch(actions.loadCoursePackYearListing())}, 500);
 
 const render = () => {
-  console.log('render location', window.location.hash);
 	ReactDOM.render(
         (<Provider store={store}>
           <div>

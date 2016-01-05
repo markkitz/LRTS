@@ -2,11 +2,11 @@ const React = require('react');
 const {connect} = require('react-redux');
 import MenuBar  from '../../components/MenuBar.js';
 
-let MenuBarContainer = ({menuItems, currentForm, menuBarClickHandler}) => {
+let CoursePackMenuBarContainer = ({menuItems, currentForm, menuBarClickHandler}) => {
     return (<MenuBar menuItems={menuItems} currentItem={currentForm} menuBarClickHandler={menuBarClickHandler} />);
 }
 
-MenuBarContainer = connect (
+CoursePackMenuBarContainer = connect (
     (state) => {
         let {forms, currentForm} = state.coursePackModule
         return {menuItems:forms, currentForm};
@@ -17,6 +17,6 @@ MenuBarContainer = connect (
         };
         return {menuBarClickHandler};
     }
-)(MenuBarContainer);
+)(CoursePackMenuBarContainer);
 
-export default MenuBarContainer;
+export default CoursePackMenuBarContainer;

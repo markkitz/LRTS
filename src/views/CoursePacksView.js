@@ -4,7 +4,8 @@ import CoursePackYearListing from '../containers/CoursePacks/CoursePackYearListi
 
 let HomeView = () => {
   return (<div>
-          <h1>Home</h1>
+          <h1>Course Packs</h1>
+          <CoursePackYearListing/>
         </div>)
 }
 export default HomeView

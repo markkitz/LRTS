@@ -1,34 +1,30 @@
 const React = require('react');
-import CourseInfoForm  from './CourseInfoForm.js'
-import PrintDetailsForm  from './PrintDetailsForm.js'
-import MenuBarContainer from './MenuBarContainer.js'
-import UploadForm from './UploadForm.js'
+import CoursePackInfoForm  from './CoursePackInfoForm.js'
+import CoursePackPrintDetailsForm  from './CoursePackPrintDetailsForm.js'
+import CoursePackMenuBarContainer from './CoursePackMenuBarContainer.js'
+import CoursePackUploadForm from './CoursePackUploadForm.js'
 const {connect} = require('react-redux');
 import '../../css/course-pack-module.css'
 
-let CoursePackModule = ({id, isLoaded, unselect, formName}) => {
+let CoursePackModule = ({id, isLoaded, unselect, termName}) => {
 		return(
 			isLoaded == false ? <h2>loading</h2>:
 		<div className="cpm">
-			<div className={'cpm-hdr'} onClick={() => unselect()} >{formName}</div>
-            <MenuBarContainer />
-			<CourseInfoForm  />
-			<PrintDetailsForm />
-            <UploadForm />
+			<div className={'cpm-hdr'} onClick={() => unselect()} >{termName}</div>
+      <CoursePackMenuBarContainer />
+			<CoursePackInfoForm  />
+			<CoursePackPrintDetailsForm />
+      <CoursePackUploadForm />
 		</div>);
 };
 CoursePackModule = connect(
 	(state) => {
 		const currentForm = state.coursePackModule.forms.find(f => f.key == state.coursePackModule.currentForm);
 		return {
-		isLoaded:state.coursePackModule.isLoaded,
-		formName:currentForm.value
+		isLoaded:state.coursePackModule.isLoaded
 		};},
 	(dispatch) => {
 		 const unselect = () => dispatch({type:'UNSELECT_COURSE_PACK_TERM'})
 		 return {unselect}
-        }
-
-
-	)(CoursePackModule);
+        })(CoursePackModule);
 export default CoursePackModule;

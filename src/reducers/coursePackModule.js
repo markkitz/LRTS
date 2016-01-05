@@ -1,4 +1,4 @@
-var forms = [{key:'CourseInfoForm', value:'Course Info Form'},{key:'PrintDetailsForm',value:'Print Details'}, {key:'UploadForm', value:'Upload Form'}];
+var forms = [{key:'CoursePackInfoForm', value:'Course Info Form'},{key:'CoursePackPrintDetailsForm',value:'Print Details'}, {key:'CoursePackUploadForm', value:'Upload Form'}];
 var formIdentifiers = forms.map(form => {return form.key});
 
 const getPreviousForm = (currentForm) => {
@@ -16,7 +16,7 @@ const getNextForm = (currentForm) => {
   return currentForm;
 };
 
-const coursePackModule = (state= {currentForm:'CourseInfoForm', isLoaded:false, forms:forms, isLoaded:false}, action) => {
+const coursePackModule = (state= {currentForm:'CoursePackInfoForm', isLoaded:false, forms:forms, isLoaded:false}, action) => {
 	switch(action.type){
 		case 'PREVIOUS_CLICK':
 			return {...state, currentForm:getPreviousForm(action.form)};

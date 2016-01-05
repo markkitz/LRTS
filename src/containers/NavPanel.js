@@ -11,6 +11,7 @@ let NavPanel = ({currentForm}) => {
       <ul>
          <li className={classNames({'active' : currentForm == 'homeRoute'})} ><a href="#/home" ><i className="fa fa-lg fa-fw fa-home" ></i> Home</a></li>
          <li className={classNames({'active' : currentForm == 'viewtestRoute'})} ><a href="#/viewtest" ><i className="fa fa-lg fa-fw fa-flag" ></i> View Test</a></li>
+         <li className={classNames({'active' : currentForm == 'coursePacksRoute'})} ><a href="#/coursepacks" ><i className="fa fa-lg fa-fw fa-book" ></i>Course Packs</a></li>
       </ul>
     </nav>
   )
