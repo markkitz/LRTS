@@ -7,13 +7,16 @@ const {connect} = require('react-redux')
 import {Router, routeHashWatcher} from './router'
 import {routes, routeViews, routeTitles} from './routes.js'
 ///// reducers //////////////
-import navigationReducer from './reducers/navigationReducer.js'
-import coursePackModule from './reducers/coursePackModule.js'
-import coursePackYearListing from './reducers/coursePackYearListing.js'
+// import navigationReducer from './reducers/navigationReducer.js'
+// import coursePackModule from './reducers/coursePackModule.js'
+// import coursePackYearListing from './reducers/coursePackYearListing.js'
 ///// containers ////////////
 import NavPanel from './containers/NavPanel.js'
 import NavHeaderBar from './containers/NavHeaderBar.js'
 const actions = require('./actions/actions.js');
+import configureStore from './store/configureStore';
+import DevTools from './containers/DevTools';
+
 
 
 const render = () => {
@@ -26,6 +29,7 @@ const render = () => {
               <div className='cnt-bdy'>
                 <Router routes={routes} routeViews={routeViews} routeTitles={routeTitles} />
               </div>
+              <DevTools />
           </div>
         </Provider>)
 		, document.getElementById('root')
@@ -33,11 +37,11 @@ const render = () => {
 };
 
 const {Provider} = ReactRedux;
-const {createStore, combineReducers, applyMiddleware} = Redux;
-const App = combineReducers({navigationReducer,coursePackModule,coursePackYearListing});
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-var store = createStoreWithMiddleware(App);
-
+//const {createStore, combineReducers, applyMiddleware} = Redux;
+//const App = combineReducers({navigationReducer,coursePackModule,coursePackYearListing});
+//const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+//var store = createStoreWithMiddleware(App);
+const store = configureStore();
 store.subscribe(render);
 render();
 routeHashWatcher.watch(store.dispatch, routes)

@@ -28,6 +28,9 @@
     "babel-preset-stage-2": "^6.3.13",
     "css-loader": "^0.23.1",
     "react-bootstrap": "^0.28.1",
+    "redux-devtools": "^3.0.1",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.1",
     "webpack-dev-server": "^1.14.0"
   }
 }
