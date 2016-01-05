@@ -1,6 +1,6 @@
 const React = require('react');
 import CoursePackTerms from './CoursePackTerms.js'
-import '../css/course-pack-year.css'
+import '../../css/course-pack-year.css'
 
 const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHandler, unselectCoursePackYearHandler}) => {
     let tdTerms = terms.map(t => {

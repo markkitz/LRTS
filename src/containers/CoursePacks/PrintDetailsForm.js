@@ -1,8 +1,8 @@
 const React = require('react');
 const ReactRedux = require('react-redux');
 const {connect} = ReactRedux;
-import TextInput  from '../components/TextInput.js'
-import SubForm  from '../components/Subform.js'
+import TextInput  from '../../components/TextInput.js'
+import SubForm  from '../../components/Subform.js'
 
 const PrintDetailsForm = connect (
      (state) => {

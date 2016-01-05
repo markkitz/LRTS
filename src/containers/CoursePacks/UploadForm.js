@@ -1,7 +1,7 @@
 const React = require('react');
 const {connect} = require('react-redux');
-import TextInput  from '../components/TextInput.js'
-import SubForm  from '../components/Subform.js'
+import TextInput  from '../../components/TextInput.js'
+import SubForm  from '../../components/Subform.js'
 
 const UploadForm = connect (
  (state) => {

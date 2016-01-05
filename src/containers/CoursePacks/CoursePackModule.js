@@ -4,7 +4,7 @@ import PrintDetailsForm  from './PrintDetailsForm.js'
 import MenuBarContainer from './MenuBarContainer.js'
 import UploadForm from './UploadForm.js'
 const {connect} = require('react-redux');
-import '../css/course-pack-module.css'
+import '../../css/course-pack-module.css'
 
 let CoursePackModule = ({id, isLoaded, unselect, formName}) => {
 		return(

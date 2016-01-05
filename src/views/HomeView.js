@@ -1,6 +1,6 @@
 const React = require('react');
 const {connect} = require('react-redux');
-import CoursePackYearListing from '../containers/CoursePackYearListing.js'
+import CoursePackYearListing from '../containers/CoursePacks/CoursePackYearListing.js'
 
 let HomeView = () => {
   return (<div>

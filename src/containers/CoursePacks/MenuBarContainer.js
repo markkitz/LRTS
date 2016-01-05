@@ -1,6 +1,6 @@
 const React = require('react');
 const {connect} = require('react-redux');
-import MenuBar  from '../components/MenuBar.js';
+import MenuBar  from '../../components/MenuBar.js';
 
 let MenuBarContainer = ({menuItems, currentForm, menuBarClickHandler}) => {
     return (<MenuBar menuItems={menuItems} currentItem={currentForm} menuBarClickHandler={menuBarClickHandler} />);

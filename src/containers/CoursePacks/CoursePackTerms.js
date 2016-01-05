@@ -1,8 +1,8 @@
 const React = require('react');
 const {connect} = require('react-redux');
-const actions = require('../actions/actions.js');
+const actions = require('../../actions/actions.js');
 import CoursePackModule from './CoursePackModule.js'
-import '../css/course-pack-terms.css'
+import '../../css/course-pack-terms.css'
 
 let CoursePackTerms = ({terms}) => {
     let coursePackTermList = terms.map( t => { return <CoursePackTerm key={'coursePackTerm_' + t.id} term={t}/>});

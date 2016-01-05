@@ -1,10 +1,10 @@
 {
-  "name": "routertest",
-  "version": "1.0.0",
+  "name": "LRTS",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server ./src/main.js --content-base src"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,9 +16,7 @@
     "react-redux": "^4.0.6",
     "redux": "^3.0.5",
     "redux-thunk": "^1.0.3",
-    "style-loader": "^0.13.0",
-    "uniloc": "^0.2.0",
-    "webpack": "^1.12.9"
+    "uniloc": "^0.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.3.17",
@@ -28,9 +26,12 @@
     "babel-preset-stage-2": "^6.3.13",
     "css-loader": "^0.23.1",
     "react-bootstrap": "^0.28.1",
+    "react-hot-loader": "^1.3.0",
     "redux-devtools": "^3.0.1",
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.1",
-    "webpack-dev-server": "^1.14.0"
+    "style-loader": "^0.13.0",
+    "webpack-dev-server": "^1.14.0",
+    "webpack": "^1.12.9"
   }
 }
