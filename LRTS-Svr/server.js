@@ -20,24 +20,34 @@ var router = express.Router();              // get an instance of the express Ro
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 // router.get('/', function(req, res) {
-//     res.json({ message: 'hooray! welcome to our api!' });   
+//     res.json({ message: 'hooray! welcome to our api!' });
 // });
+router.route('/course')
+  .get(function(req, res) {
+        const course = {
+          courseCode: 'DRNE100',
+          courseTitle: 'Drone Repair'
+        };
+       res.json(course);
+    });
+
+
 router.route('/coursePackYears')
 
     // create a bear (accessed at POST http://localhost:8080/api/bears)
 //     .post(function(req, res) {
-//         
+//
 //         var bear = new Bear();      // create a new instance of the Bear model
 //         bear.name = req.body.name;  // set the bears name (comes from the request)
-// 
+//
 //         // save the bear and check for errors
 //         bear.save(function(err) {
 //             if (err)
 //                 res.send(err);
-// 
+//
 //             res.json({ message: 'Bear created!' });
 //         });
-//         
+//
 //     })
     .get(function(req, res) {
         var termId =1;
@@ -48,7 +58,7 @@ router.route('/coursePackYears')
             ]};
        res.json(years);
     });
-    
+
    router.route('/terms').get(function(req, res) {
        var termId = req.param('termId');
        var rtn = {

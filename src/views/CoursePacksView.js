@@ -1,11 +1,14 @@
 const React = require('react');
 const {connect} = require('react-redux');
+import CourseTitle from '../containers/CourseTitle.js'
+import BlockMenu from '../components/BlockMenu.js'
 import CoursePackYearListing from '../containers/CoursePacks/CoursePackYearListing.js'
 
-let HomeView = () => {
+let CoursePackView = () => {
   return (<div>
-          <h1>Course Packs</h1>
+          <CourseTitle courseCode='ABC123' courseTitle='Test course' />
+          <BlockMenu />
           <CoursePackYearListing/>
         </div>)
 }
-export default HomeView
+export default CoursePackView

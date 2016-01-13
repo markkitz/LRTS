@@ -1,0 +1,13 @@
+ul.blockMenu { padding-left: 5px; margin-top: 10px; list-style-type: none;text-transform: uppercase; }
+ul.blockMenu ul li.selected { border: 3px solid #1DBBED !important; padding: 0; cursor: default; }
+ul.blockMenu ul li.selected a { cursor: default; }
+ul.blockMenu ul li:not(.selected), ul.blockMenu ul li:not(.selected) a { cursor: pointer; }
+ul.blockMenu li ul { list-style-type: none; padding-left: 0; margin-bottom: 10px; }
+ul.blockMenu li ul li { display: table !important; float: left; width: 95px; background-color: #fff; text-align: center; font-size: 12px; border: 1px solid #ccc; vertical-align: middle; padding: 2px; margin: 5px; table-layout: fixed; }
+ul.blockMenu li ul:after { content: ''; display: block; clear: both; }
+ul.blockMenu li ul li:hover { border: 3px solid #9DD3F3; padding: 0; }
+ul.blockMenu ul li i { font-size: 26px; margin: 4px; display: block; }
+ul.blockMenu li.blockMenuRow-L ul li { height: 95px; }
+ul.blockMenu li.blockMenuRow-M ul li { height: 60px; }
+ul.blockMenu li.blockMenuRow-S ul li { height: 40px; }
+ul.blockMenu a { color: #000; display: table-cell !important; vertical-align: middle !important; overflow: hidden; -ms-text-overflow: ellipsis; -o-text-overflow: ellipsis; text-overflow: ellipsis; text-decoration: none; }
