@@ -1,0 +1,27 @@
+.coursePackChangeTypeForm{
+  padding-bottom: 20px;
+  font-family: Roboto, sans-serif;
+}
+.coursePackChangeTypeForm  p {
+  margin-top: 10px;
+  padding-bottom:10px;
+}
+.coursePackChangeTypeForm-type{
+  clear:left;
+  color:#888;
+}
+.coursePackChangeTypeForm-type-icon{
+  width:20%;
+  float:left;
+  text-align: center
+}
+.coursePackChangeTypeForm-type-text{
+  width:80%;
+  float:left;
+}
+.coursePackChangeTypeForm-type h3{
+  margin-top:5px;
+}
+.selected {
+  color:#000;
+}

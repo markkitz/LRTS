@@ -8,6 +8,16 @@ import NavPanel from './containers/NavPanel'
 import NavHeaderBar from './containers/NavHeaderBar'
 import configureStore from './store/configureStore'
 import DevTools from './containers/DevTools'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import AppBar from 'material-ui/lib/app-bar';
+
+// Needed for onTouchTap
+// Can go away when react 1.0 release
+// Check this repo:
+// https://github.com/zilverline/react-tap-event-plugin
+injectTapEventPlugin();
+
+
 ///// actions ///////////////
 const actions = require('./actions/actions')
 
@@ -21,6 +31,7 @@ const render = () => {
 	ReactDOM.render(
         (<Provider store={store}>
           <div>
+
               <NavHeaderBar routeTitles={routeTitles} />
               <NavPanel />
               <div className='cnt-bdy'>

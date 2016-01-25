@@ -14,7 +14,7 @@ let CoursePackYearListing =({isLoaded, years, selectedYearId, selectCoursePackYe
     var yearsHTML = years.map(y => {
         return <CoursePackYear key={'coursePackYear_' + y.id } id={y.id} year ={y.year} terms={y.terms} selectedYearId={selectedYearId} selectCoursePackYearHandler={selectCoursePackYearHandler} unselectCoursePackYearHandler={unselectCoursePackYearHandler}/>;
     });
-    return( <div>{yearsHTML}</div>);
+    return( <div className="coursePackYearListing">{yearsHTML}</div>);
 };
 CoursePackYearListing = connect(
     (state) => {

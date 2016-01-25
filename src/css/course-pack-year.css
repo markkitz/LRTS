@@ -13,6 +13,7 @@
     margin-bottom: 10px;
     font-weight: bold;
     font-size: 22px;
+    font-family: 'Roboto', sans-serif;
 }
 .cpy {
     background: #fff;
@@ -27,11 +28,30 @@
 }
 .cpy-table td{
     border:1px solid #ddd;
-    padding:10px;
+    padding:0 10px 10px 10px;
+}
+.cpy-table td:first-child{
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+  padding-top: 25px;
+  font-weight: bold;
 }
 .cpy-close-btn{
     float:right;
     width:20px;
     margin:5px 10px;
     cursor:pointer;
+}
+.cpy-selected h2{
+  color: rgb(54, 82, 143)
+}
+.cpy-table td div:first-child{
+  font-weight: normal;
+  font-size: 8pt;
+  text-align: center;
+  color:#bbb
+}
+.coursePackYearListing{
+  max-width: 1000px
 }

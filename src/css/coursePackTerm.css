@@ -1,0 +1,42 @@
+.coursePackTerm {
+	background: #fff;
+	border: 1px solid #ccc;
+	margin: 0 25px -1px 15px;
+	-webkit-box-shadow: 3px 3px 5px 0 rgba(189,189,189,1);
+	-moz-box-shadow: 3px 3px 5px 0 rgba(189,189,189,1);
+	box-shadow: 3px 3px 5px 0 rgba(189,189,189,1);
+	display: flex;
+	cursor: pointer;
+	font-size: 15px;
+    padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left:10px;
+	  font-family: Roboto, sans-serif;
+}
+.coursePackTerm-divIcon {
+	width: 50px;
+}
+.coursePackTerm-divIcon i {
+	font-size: 25px;
+}
+.coursePackTerm-divIcon i.fa-check
+{
+	    color: #249c49;
+}
+.coursePackTerm-divIcon i.glyphicon-unchecked
+{
+	    color: #bbb;
+}
+.coursePackTerm-divIcon i.fa-clock-o
+{
+	    color: #bbb;
+}
+.coursePackTerm div:nth-child(2) {
+	width:270px;
+	padding-top:3px;
+}
+.coursePackTerm div:nth-child(3){
+	font-size: 13px;
+    padding-top: 5px;
+    color: #777;
+}

@@ -1,5 +1,7 @@
 .sf{
-  padding:30px
+  margin: auto;
+max-width: 600px;
+padding: 10px;
 }
 .sf-prev-next-btns{
   text-align: center;

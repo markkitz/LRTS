@@ -1,22 +1,24 @@
-var forms = [{key:'CoursePackInfoForm', value:'Course Info Form'},{key:'CoursePackPrintDetailsForm',value:'Print Details'}, {key:'CoursePackUploadForm', value:'Upload Form'}];
-var formIdentifiers = forms.map(form => {return form.key});
+//var forms = [{key:'CoursePackInfoForm', value:'Course Info Form'},{key:'CoursePackPrintDetailsForm',value:'Print Details'}, {key:'CoursePackUploadForm', value:'Upload Form'}];
+//var formIdentifiers = forms.map(form => {return form.key});
+var forms = ["CoursePackChangeTypeForm", "CoursePackInfoForm", "CoursePackPrintDetailsForm", "CoursePackUploadForm", "CopyrightForm", "ReviewForm"];
 
 const getPreviousForm = (currentForm) => {
-  var i = formIdentifiers.indexOf(currentForm);
+  var i = forms.indexOf(currentForm);
   if(i > 0){
-      return formIdentifiers[i-1];
-  }  
+      return forms[i-1];
+  }
   return currentForm;
 };
 const getNextForm = (currentForm) => {
-  var i = formIdentifiers.indexOf(currentForm);
-  if(i < formIdentifiers.length - 1){
-      return formIdentifiers[i+1];
-  }  
+  console.log(currentForm)
+  var i = forms.indexOf(currentForm);
+  if(i < forms.length - 1){
+      return forms[i+1];
+  }
   return currentForm;
 };
 
-const coursePackModule = (state= {currentForm:'CoursePackInfoForm', isLoaded:false, forms:forms, isLoaded:false}, action) => {
+const coursePackModule = (state= {currentForm:'CoursePackChangeTypeForm', isLoaded:false, isLoaded:false}, action) => {
 	switch(action.type){
 		case 'PREVIOUS_CLICK':
 			return {...state, currentForm:getPreviousForm(action.form)};
@@ -25,11 +27,11 @@ const coursePackModule = (state= {currentForm:'CoursePackInfoForm', isLoaded:fal
 		case 'NAVIGATE_TO_FORM':
 			return {...state, currentForm:action.form};
 		case 'LOAD_COURSE_MODULE_FOR_TERM':
-			return {...state, formData:action.formData, isLoaded:true, currentForm:state.forms[0].key};
+			return {...state, formData:action.formData, isLoaded:true, currentForm:'CoursePackChangeTypeForm'};
 		case 'UPDATE_COVERINFO':
 		case 'UPDATE_PRINTDETAILS':
 			return  {...state, formData: formData(state.formData, action) };
-	
+
 		default:
 			return state;
 	}
@@ -42,7 +44,7 @@ const formData = (state = {}, action) => {
 			return  {...state,  printDetails: printDetails(state.printDetails, action)};
 		default:
 			return state;
-	}  
+	}
 }
 const courseInfo = (state = {}, action) => {
 	switch(action.type){
@@ -50,16 +52,16 @@ const courseInfo = (state = {}, action) => {
 			return  {...state,  [action.keyValue.name]: action.keyValue.value };
 		default:
 			return state;
-	}  
+	}
 }
 
 const printDetails = (state, action) => {
 	switch(action.type){
-		case 'UPDATE_PRINTDETAILS':        
+		case 'UPDATE_PRINTDETAILS':
 			return {...state,  [action.keyValue.name]: action.keyValue.value };
 		default:
 			return state;
-	}  
+	}
 }
 
 

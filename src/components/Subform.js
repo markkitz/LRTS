@@ -1,36 +1,32 @@
 const React = require('react');
 const ReactRedux = require('react-redux');
 const {connect} = ReactRedux;
+import FlatButton from 'material-ui/lib/flat-button';
 import '../css/subform.css'
 
-let SubForm = ({heading, isVisible, children, form, dispatch}) => {
+let SubForm = ({heading, form, children, dispatch, isFirst, isLast}) => {
 
     let handleOnPrevious = ()  => {dispatch({type:"PREVIOUS_CLICK", form: form})};
     let handleOnNext = () => {dispatch({type:"NEXT_CLICK", form: form})};
 
-    if(isVisible)
-    {
+
         return(
             <div className='sf'>
                 {children}
-                <PrevNextNav onPrevious ={handleOnPrevious} onNext = {handleOnNext} />
+                <PrevNextNav onPrevious ={handleOnPrevious} onNext = {handleOnNext} isFirst={isFirst} isLast={isLast} />
             </div>
         );
-    }
-    else
-    {
-        return <div></div>;
-    }
+
 };
 SubForm = connect()(SubForm);
 
 
-const PrevNextNav = ({onPrevious, onNext}) => {
+const PrevNextNav = ({onPrevious, onNext, isFirst, isLast}) => {
     return (
 
         <div className='sf-prev-next-btns'>
-            <button type="button" className="btn btn-primary" onClick={onPrevious}>Previous</button>
-            <button type="button" className="btn btn-primary" onClick={onNext}>Next</button>
+            <FlatButton label="Previous" disabled={isFirst} onClick={onPrevious} />
+            <FlatButton label="Next" disabled={isLast}   onClick={onNext} />
         </div>
     );
 };

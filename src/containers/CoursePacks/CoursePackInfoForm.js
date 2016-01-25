@@ -1,33 +1,21 @@
 const React = require('react');
 const {connect} = require('react-redux');
-import TextInput  from '../../components/TextInput'
 import SubForm  from '../../components/Subform'
+import TextField from 'material-ui/lib/text-field';
 
-const CoursePackInfoForm = connect (
-     (state) => {
-         return   {currentForm:state.coursePackModule.currentForm, model:state.coursePackModule.formData.courseInfo };
-    },
-    (dispatch) => {
-        return {
-            dispatchSetVariable: (name, value) => {dispatch({type:'UPDATE_COVERINFO', keyValue:{name, value} }); }
-            };
-    })
-    (({currentForm, model, dispatchSetVariable}) =>
-        {
-            let isDirty = false;
-            const setVariable = (name, value) =>{
-                isDirty = true;
-                dispatchSetVariable(name, value);
-            };
-            const saveState = () =>{};
-            return (
-            <SubForm heading={'Course Pack Info'} isVisible={currentForm=='CoursePackInfoForm'} form={'CoursePackInfoForm'}>
-                <TextInput label="coursePackNumber:" name="coursePackNumber" value={model.coursePackNumber} onChange={setVariable}  onBlur = {saveState}  />
-                <TextInput label="title:" name="title" value={model.title} onChange={setVariable}  onBlur = {saveState}  />
-                <TextInput label="subtitle:" name="subtitle" value={model.subtitle} onChange={setVariable}  onBlur = {saveState}  />
-            </SubForm>);
-        }
-);
+const CoursePackInfoForm =   ({ model, onTextBoxChange}) =>
+      {
+          let isDirty = false;
 
+          const saveState = () =>{};
+          return (
+          <SubForm heading={'Course Pack Info '}  form={'CoursePackInfoForm'} >
+              <div><TextField  floatingLabelText="School" hintText="Enter Text" value={"School of Health Sciences"}  disabled={true} /></div>
+              <div><TextField  floatingLabelText="Program" hintText="Enter Text" value={"Dental Technology"}  disabled={true} /></div>
+              <div><TextField name="coursePackNumber" floatingLabelText="Course Pack Number" hintText="Enter Text" value={model.coursePackNumber} onChange={onTextBoxChange} /></div>
+              <div><TextField name="title" floatingLabelText="Title" hintText="Enter Text" fullWidth={true} value={model.title} onChange={onTextBoxChange} /></div>
+              <div><TextField name="subtitle" floatingLabelText="Subtitle" hintText="Enter Text" fullWidth={true} value={model.subtitle} onChange={onTextBoxChange} /></div>
+          </SubForm>);
+      };
 
 export default CoursePackInfoForm;
