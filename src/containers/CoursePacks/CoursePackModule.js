@@ -1,9 +1,10 @@
 const React = require('react');
-import CoursePackChangeTypeForm from './CoursePackChangeTypeForm'
-import CoursePackInfoForm  from './CoursePackInfoForm.js'
-import CoursePackPrintDetailsForm  from './CoursePackPrintDetailsForm.js'
-import CoursePackMenuBarContainer from './CoursePackMenuBarContainer.js'
-import CoursePackUploadForm from './CoursePackUploadForm.js'
+import CoursePackChangeTypeForm from './Subform/CoursePackChangeTypeForm'
+import CoursePackInfoForm  from './Subform/CoursePackInfoForm.js'
+import CoursePackPrintDetailsForm  from './Subform/CoursePackPrintDetailsForm.js'
+import CoursePackUploadForm from './Subform/CoursePackUploadForm.js'
+import CoursePackCopyrightForm from './Subform/CoursePackCopyrightForm.js'
+import CoursePackReviewForm from './Subform/CoursePackReviewForm.js'
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 const {connect} = require('react-redux');
@@ -18,7 +19,7 @@ const styles = {
   },
 };
 
-let CoursePackModule = ({id, isLoaded, currentForm, unselect, termName, tabChangeHandler, onTextBoxChange, courseInfo, printDetails, upload }) => {
+let CoursePackModule = ({id, isLoaded, currentForm, unselect, termName, tabChangeHandler, onTextBoxChange, onPropertyChange,courseInfo, printDetails,copyright, reviewForm, upload }) => {
 		return(
 			isLoaded == false ? <h2>loading</h2>:
 		<div className="cpm">
@@ -28,49 +29,51 @@ let CoursePackModule = ({id, isLoaded, currentForm, unselect, termName, tabChang
           <CoursePackChangeTypeForm />
         </Tab>
         <Tab label="Cover Information" value="CoursePackInfoForm" >
-          <CoursePackInfoForm onTextBoxChange={onTextBoxChange} model={courseInfo} />
+          <CoursePackInfoForm model={courseInfo}  onPropertyChange={onPropertyChange}/>
         </Tab>
         <Tab label="Print Details" value="CoursePackPrintDetailsForm" >
-          <CoursePackPrintDetailsForm onTextBoxChange={onTextBoxChange} model={printDetails}/>
+          <CoursePackPrintDetailsForm  model={printDetails} onPropertyChange={onPropertyChange}/>
         </Tab>
         <Tab  label="Upload" value="CoursePackUploadForm" >
           <CoursePackUploadForm onTextBoxChange={onTextBoxChange} model={upload}/>
         </Tab>
-        <Tab  label="Copyright" value="CopyrightForm" >
-          <h1>test</h1>
+        <Tab  label="Copyright" value="CoursePackCopyrightForm" >
+          <CoursePackCopyrightForm  model={copyright} onPropertyChange={onPropertyChange}/>
         </Tab>
-        <Tab label="Review" value="ReviewForm" >
-          <h1>test</h1>
+        <Tab label="Review" value="CoursePackReviewForm" >
+          <CoursePackReviewForm  model={reviewForm} onPropertyChange={onPropertyChange}/>
         </Tab>
       </Tabs>
 		</div>);
 };
 CoursePackModule = connect(
 	(state) => {
-    console.log("coursePackModule", state.coursePackModule)
-
     let isLoaded = state.coursePackModule.isLoaded;
     let currentForm = state.coursePackModule.currentForm;
     let courseInfo = isLoaded ? state.coursePackModule.formData.courseInfo : null;
     let printDetails = isLoaded ? state.coursePackModule.formData.printDetails : null;
+    let copyright = isLoaded ? state.coursePackModule.formData.copyright :null;
     let upload = isLoaded ? state.coursePackModule.formData.upload : null;
+    let reviewForm = isLoaded ? state.coursePackModule.formData.reviewForm : null;
 
 		return {
-  		isLoaded:isLoaded,
-      currentForm:currentForm,
-      courseInfo: courseInfo,
-      printDetails: printDetails,
-      upload: upload
+  		isLoaded,
+      currentForm,
+      courseInfo,
+      printDetails,
+      upload,
+      copyright
 		};},
 	(dispatch) => {
 		 const unselect = () => dispatch({type:'UNSELECT_COURSE_PACK_TERM'})
      const tabChangeHandler = (form) => {
-       dispatch({type:'NAVIGATE_TO_FORM', form});
+       if((typeof form) == "string")
+        dispatch({type:'NAVIGATE_TO_FORM', form});
      };
-     const onTextBoxChange = ({target}) => {
-       dispatchSetVariable(target.name, target.value);
+     const onPropertyChange = (dispatchType, name, value) => {
+       dispatch({type:dispatchType, keyValue:{ name:name, value:value } })
      }
-		 return {unselect, tabChangeHandler, onTextBoxChange}
+		 return {unselect, tabChangeHandler,  onPropertyChange}
         })(CoursePackModule);
 export default CoursePackModule;
 

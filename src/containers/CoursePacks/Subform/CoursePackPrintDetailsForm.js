@@ -1,31 +1,19 @@
 const React = require('react');
 const ReactRedux = require('react-redux');
 const {connect} = ReactRedux;
-import SubForm  from '../../components/Subform.js'
+import SubForm  from '../../../components/Subform.js'
 import TextField from 'material-ui/lib/text-field';
 import SelectField from 'material-ui/lib/select-field';
 import MenuItem from 'material-ui/lib/menus/menu-item';
-const CoursePackPrintDetailsForm = connect (
-     (state) => {
-         return   {visibleForm:state.coursePackModule.currentForm, model:state.coursePackModule.formData.printDetails };
-    },
-    (dispatch) => {
-        return {
-            dispatchSetVariable: (name, value) => {dispatch({type:'UPDATE_PRINTDETAILS', keyValue:{name, value} }); }
-            };
-    })
-    (({visibleForm, model, onTextBoxChange}) =>
+const CoursePackPrintDetailsForm = ({visibleForm, model, onPropertyChange}) =>
         {
-            let isDirty = false;
-            const setVariable = (name, value) =>{
-                isDirty = true;
-                dispatchSetVariable(name, value);
-            };
-            const saveState = () =>{};
+          let form ="CoursePackPrintDetailsForm";
+          let actionType = "UPDATE_PRINTDETAILS"
+
             return (
-                    <SubForm heading={'Print Details'} isVisible={visibleForm=='CoursePackPrintDetailsForm'}  form={'CoursePackPrintDetailsForm'}>
+                    <SubForm form={form}>
                       <div>
-                          <SelectField floatingLabelText="Duplex">
+                          <SelectField floatingLabelText="Duplex" value={model.duplex} onChange={(e, index, value) => onPropertyChange(actionType, "duplex", value)}>
                               <MenuItem value={1} primaryText="Never"/>
                               <MenuItem value={2} primaryText="Every Night"/>
                               <MenuItem value={3} primaryText="Weeknights"/>
@@ -36,7 +24,7 @@ const CoursePackPrintDetailsForm = connect (
 		                </SubForm>
            );
         }
-);
+
 
 
 export default CoursePackPrintDetailsForm;

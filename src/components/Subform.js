@@ -4,7 +4,7 @@ const {connect} = ReactRedux;
 import FlatButton from 'material-ui/lib/flat-button';
 import '../css/subform.css'
 
-let SubForm = ({heading, form, children, dispatch, isFirst, isLast}) => {
+let SubForm = ({ form, children, dispatch, isFirst, isLast}) => {
 
     let handleOnPrevious = ()  => {dispatch({type:"PREVIOUS_CLICK", form: form})};
     let handleOnNext = () => {dispatch({type:"NEXT_CLICK", form: form})};

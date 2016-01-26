@@ -1,9 +1,9 @@
 const React = require('react');
 const {connect} = require('react-redux');
-import SubForm  from '../../components/Subform'
+import SubForm  from '../../../components/Subform'
 import IconButton from 'material-ui/lib/icon-button';
 import FlatButton from 'material-ui/lib/flat-button';
-import '../../css/CoursePackChangeTypeForm.css'
+import '../../../css/CoursePackChangeTypeForm.css'
 
 const CoursePackChangeTypeForm =   ({ model, onTextBoxChange}) =>
       {

@@ -1,6 +1,6 @@
 //var forms = [{key:'CoursePackInfoForm', value:'Course Info Form'},{key:'CoursePackPrintDetailsForm',value:'Print Details'}, {key:'CoursePackUploadForm', value:'Upload Form'}];
 //var formIdentifiers = forms.map(form => {return form.key});
-var forms = ["CoursePackChangeTypeForm", "CoursePackInfoForm", "CoursePackPrintDetailsForm", "CoursePackUploadForm", "CopyrightForm", "ReviewForm"];
+var forms = ["CoursePackChangeTypeForm", "CoursePackInfoForm", "CoursePackPrintDetailsForm", "CoursePackUploadForm", "CoursePackCopyrightForm", "CoursePackReviewForm"];
 
 const getPreviousForm = (currentForm) => {
   var i = forms.indexOf(currentForm);
