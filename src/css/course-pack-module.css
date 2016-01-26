@@ -16,11 +16,20 @@ div.cpm
 }
 .cpm-hdr
 {
-        font-size: 15px;
-        padding-top: 12px;
-        padding-bottom: 12px;
+        font-size: 18px;
+        padding-top: 14px;
+        padding-bottom: 14px;
         padding-left: 10px;
         border-bottom: 1px solid #ccc;
         cursor: pointer;
         font-family: Roboto, sans-serif;
+}
+.cpm-tabs>div:first-child {
+  background-color:#efefef !important
+}
+.cpm-tabs .selectedTab {
+  color: #333 !important;
+}
+.cpm-tabs .unselectedTab{
+  color: #777 !important;
 }

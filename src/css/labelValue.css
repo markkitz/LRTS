@@ -1,0 +1,13 @@
+.labelValue label{
+    color: rgba(0, 0, 0, 0.46);
+    font-size:12px;
+    padding-left:2px;
+    padding-top:10px;
+    margin-bottom:8px;
+    display:block;
+    color:#aaa;
+}
+.labelValue>div{
+  color:#000;
+  margin-bottom:5px;
+}
