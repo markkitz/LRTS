@@ -2,36 +2,36 @@
 //var formIdentifiers = forms.map(form => {return form.key});
 var forms = ["CoursePackChangeTypeForm", "CoursePackInfoForm", "CoursePackPrintDetailsForm", "CoursePackUploadForm", "CoursePackCopyrightForm", "CoursePackReviewForm"];
 
-const getPreviousForm = (currentForm) => {
-  var i = forms.indexOf(currentForm);
+const getPreviousForm = (currentEditForm) => {
+  var i = forms.indexOf(currentEditForm);
   if(i > 0){
       return forms[i-1];
   }
-  return currentForm;
+  return currentEditForm;
 };
-const getNextForm = (currentForm) => {
-  console.log(currentForm)
-  var i = forms.indexOf(currentForm);
+const getNextForm = (currentEditForm) => {
+  console.log(currentEditForm)
+  var i = forms.indexOf(currentEditForm);
   if(i < forms.length - 1){
       return forms[i+1];
   }
-  return currentForm;
+  return currentEditForm;
 };
 
-const coursePackModule = (state= {currentForm:'CoursePackChangeTypeForm', isLoaded:false, isLoaded:false}, action) => {
+const coursePackModule = (state= {currentEditForm:'CoursePackChangeTypeForm', isLoaded:false}, action) => {
 	switch(action.type){
+
 		case 'PREVIOUS_CLICK':
-			return {...state, currentForm:getPreviousForm(action.form)};
+			return {...state, currentEditForm:getPreviousForm(action.form)};
 		case 'NEXT_CLICK':
-			return {...state, currentForm:getNextForm(action.form)};
+			return {...state, currentEditForm:getNextForm(action.form)};
 		case 'NAVIGATE_TO_FORM':
-			return {...state, currentForm:action.form};
+			return {...state, currentEditForm:action.form};
 		case 'LOAD_COURSE_MODULE_FOR_TERM':
-			return {...state, formData:action.formData, isLoaded:true, currentForm:'CoursePackChangeTypeForm'};
+			return {...state, formData:action.formData, isLoaded:true, currentEditForm:'CoursePackChangeTypeForm'};
 		case 'UPDATE_COVERINFO':
 		case 'UPDATE_PRINTDETAILS':
 			return  {...state, formData: formData(state.formData, action) };
-
 		default:
 			return state;
 	}

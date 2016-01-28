@@ -19,6 +19,6 @@ const coursePackYearListing = (state= json, action) => {
            return dbState;
 		default:
 			return state;
-	}  
+	}
 }
 export default coursePackYearListing;

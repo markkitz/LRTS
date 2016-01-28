@@ -62,7 +62,7 @@ router.route('/coursePackYears')
    router.route('/terms').get(function(req, res) {
        var termId = req.param('termId');
        var rtn = {
-           courseInfo: {coursePackNumber: 'CPN_' + termId, title:'title_' + termId, subtitle: 'subtitle_' + termId},
+           courseInfo: {coursePackNumber: '1295', title:'Quantitative Analysis Theory', subtitle: 'CHEM1232'},
            printDetails: {field1:'field1_' + termId}
        }
        res.json(rtn);

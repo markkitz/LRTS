@@ -23,6 +23,7 @@ div.cpm
         border-bottom: 1px solid #ccc;
         cursor: pointer;
         font-family: Roboto, sans-serif;
+        display:flex;
 }
 .cpm-tabs>div:first-child {
   background-color:#efefef !important
