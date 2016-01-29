@@ -1,14 +1,21 @@
 const React = require('react');
-let StatusIcon = ({status}) => {
+import '../css/statusIcon.css'
+let StatusIcon = ({status, isLarge}) => {
+
+  const style = {icon:{fontSize:'25px'}, iconLrg: {fontSize:'28px'}}
+
+  let iconStyle = isLarge ? style.iconLrg: style.icon
+
+
   switch (status) {
     case 'approved':
-      return (<div className='coursePackTerm-divIcon'><i className="fa fa-check" ></i></div>);
+      return (<div className='statusIcon'><i className="fa fa-check" style={iconStyle} ></i></div>);
     case 'notStarted':
-        return (<div className='coursePackTerm-divIcon'><i className="glyphicon glyphicon-unchecked" ></i></div>);
+        return (<div className='statusIcon'><i className="glyphicon glyphicon-unchecked" style={iconStyle} ></i></div>);
     case 'inProgress':
-        return (<div className='coursePackTerm-divIcon'><i className="fa fa-clock-o" ></i></div>);
+        return (<div className='statusIcon'><i className="fa fa-clock-o" style={iconStyle} ></i></div>);
     default:
-      return (<div className='coursePackTerm-divIcon'></div>);
+      return (<div className='statusIcon' style={iconStyle}>?</div>);
   }
 }
 export default StatusIcon

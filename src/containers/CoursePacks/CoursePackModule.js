@@ -59,7 +59,7 @@ let CoursePackModule = ({id, status, isLoaded,currentEditForm, unselect, termNam
 		return(
 			isLoaded == false ? <h2>loading</h2>:
 		<div className="cpm">
-			<div className={'cpm-hdr'} onClick={() => unselect()} ><StatusIcon status={status}/>  {"Course Pack - " + termName} </div>
+			<div className={'cpm-hdr'} onClick={() => unselect()} ><StatusIcon status={status} isLarge="true"/>  {"Course Pack - " + termName} </div>
       {body}
 		</div>);
 };

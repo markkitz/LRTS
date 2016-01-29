@@ -1,0 +1,18 @@
+.statusIcon {
+	width: 50px;
+}
+.statusIcon i {
+	
+}
+.statusIcon i.fa-check
+{
+	    color: #249c49;
+}
+.statusIcon i.glyphicon-unchecked
+{
+	    color: #bbb;
+}
+.statusIcon i.fa-clock-o
+{
+	    color: #bbb;
+}

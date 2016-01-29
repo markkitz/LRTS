@@ -7,7 +7,6 @@ import {routes, routeViews, routeTitles} from './routes.js'
 import NavPanel from './containers/NavPanel'
 import NavHeaderBar from './containers/NavHeaderBar'
 import configureStore from './store/configureStore'
-import DevTools from './containers/DevTools'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import AppBar from 'material-ui/lib/app-bar';
 
@@ -37,7 +36,6 @@ const render = () => {
               <div className='cnt-bdy'>
                 <Router routes={routes} routeViews={routeViews} routeTitles={routeTitles} />
               </div>
-              <DevTools />
           </div>
         </Provider>)
 		, document.getElementById('root')
