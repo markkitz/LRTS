@@ -24,6 +24,7 @@ var routeHashWatcher = {
   }
 }
 function navigationComplete(routes) {
+  console.log("NAVCOMPLETE", routes, window.location.hash, window.location.hash.substr(1))
   return {
     type: 'NAVIGATION/COMPLETE',
     route: routes.lookup(window.location.hash.substr(1)),

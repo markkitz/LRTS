@@ -8,8 +8,13 @@
   z-index: 4;
   transition: transform .15s ease-in-out;
   will-change: top,left;
+  padding:5px;
 }
-.navpnl ul {
+.navpnl .selected {
+    background-color: rgba(0,0,0,.05);
+    font-weight: bold !important;
+}
+/*.navpnl ul {
     list-style: none;
     padding: 10px 0 8px 0;
     border-bottom: 1px solid #ddd;
@@ -64,4 +69,4 @@
 }
 .navpnl::-webkit-scrollbar-thumb:hover, .gb_Uc ::-webkit-scrollbar-thumb:active {
     background-color: rgba(0,0,0,.4);
-}
+}*/
