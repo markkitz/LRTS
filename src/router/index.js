@@ -18,9 +18,9 @@ Router = connect((state) => {
 
 var routeHashWatcher = {
   watch: (dispatch, routes) => {
-    window.addEventListener('hashchange',() => {
-      dispatch(navigationComplete(routes))
-    } , false);
+    const fn = () => {dispatch(navigationComplete(routes))}
+    window.addEventListener('load', fn, false)
+    window.addEventListener('hashchange', fn, false)
   }
 }
 function navigationComplete(routes) {
