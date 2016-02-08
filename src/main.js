@@ -1,8 +1,8 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 const {Provider} = require('react-redux')
-import {Router, routeHashWatcher} from './router'
-import {routes, routeViews, routeTitles} from './routes.js'
+import {Router, routeHashWatcher} from './router.js'
+import {uniloc, routeViews, routeTitles} from './routes.js'
 ///// containers ////////////
 import NavPanel from './containers/NavPanel'
 import NavHeaderBar from './containers/NavHeaderBar'
@@ -23,7 +23,7 @@ const actions = require('./actions/actions')
 const store = configureStore();
 console.log("STATE", store.getState())
 
-routeHashWatcher.watch(store.dispatch, routes)
+routeHashWatcher.watch(store.dispatch, uniloc)
 //setTimeout(function(){ store.dispatch(actions.loadCoursePackYearListing())}, 500);
 
 const render = () => {
@@ -34,7 +34,7 @@ const render = () => {
               <NavHeaderBar routeTitles={routeTitles} />
               <NavPanel />
               <div className='cnt-bdy'>
-                <Router routes={routes} routeViews={routeViews} routeTitles={routeTitles} />
+                <Router uniloc={uniloc} routeViews={routeViews} routeTitles={routeTitles} />
               </div>
           </div>
         </Provider>)

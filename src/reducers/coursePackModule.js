@@ -1,5 +1,6 @@
-//var forms = [{key:'CoursePackInfoForm', value:'Course Info Form'},{key:'CoursePackPrintDetailsForm',value:'Print Details'}, {key:'CoursePackUploadForm', value:'Upload Form'}];
-//var formIdentifiers = forms.map(form => {return form.key});
+import {PREVIOUS_CLICK, NEXT_CLICK, NAVIGATE_TO_FORM,
+   LOAD_COURSE_MODULE_FOR_TERM, UPDATE_COVERINFO, UPDATE_PRINTDETAILS} from '../actions/actions.js'
+
 var forms = ["CoursePackChangeTypeForm", "CoursePackInfoForm", "CoursePackPrintDetailsForm", "CoursePackUploadForm", "CoursePackCopyrightForm", "CoursePackReviewForm"];
 
 const getPreviousForm = (currentEditForm) => {
@@ -21,16 +22,16 @@ const getNextForm = (currentEditForm) => {
 const coursePackModule = (state= {currentEditForm:'CoursePackChangeTypeForm', isLoaded:false}, action) => {
 	switch(action.type){
 
-		case 'PREVIOUS_CLICK':
+		case PREVIOUS_CLICK:
 			return {...state, currentEditForm:getPreviousForm(action.form)};
-		case 'NEXT_CLICK':
+		case NEXT_CLICK:
 			return {...state, currentEditForm:getNextForm(action.form)};
-		case 'NAVIGATE_TO_FORM':
+		case NAVIGATE_TO_FORM:
 			return {...state, currentEditForm:action.form};
-		case 'LOAD_COURSE_MODULE_FOR_TERM':
+		case LOAD_COURSE_MODULE_FOR_TERM:
 			return {...state, formData:action.formData, isLoaded:true, currentEditForm:'CoursePackChangeTypeForm'};
-		case 'UPDATE_COVERINFO':
-		case 'UPDATE_PRINTDETAILS':
+		case UPDATE_COVERINFO:
+		case UPDATE_PRINTDETAILS:
 			return  {...state, formData: formData(state.formData, action) };
 		default:
 			return state;

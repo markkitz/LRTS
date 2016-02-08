@@ -23,4 +23,4 @@ for (var i = 0; i < routeInfo.length; i++ ){
   routeTitles[routeInfo[i].routeType] = routeInfo[i].title
 }
 var routes = uniloc(routePath);
-module.exports = {routes:routes, routeViews:routeViews, routeTitles:routeTitles}
+module.exports = {uniloc:routes, routeViews, routeTitles}

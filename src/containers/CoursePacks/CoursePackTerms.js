@@ -1,5 +1,6 @@
 const React = require('react');
 const {connect} = require('react-redux');
+const {SELECT_TERM} = require('../../actions/actions.js');
 const actions = require('../../actions/actions.js');
 import CoursePackModule from './CoursePackModule.js'
 import StatusIcon from '../../components/StatusIcon'
@@ -29,7 +30,7 @@ CoursePackTerm = connect(
     },
     (dispatch) => {
         const selectTerm = (id) => {
-            dispatch({type:"SELECT_TERM", termId:id});
+            dispatch({type:SELECT_TERM, termId:id});
             dispatch(actions.loadCoursePackModuleFormForTerm(id));
         }
         return {selectTerm};

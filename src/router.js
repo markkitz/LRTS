@@ -1,7 +1,6 @@
 const React = require('react');
 const {connect} = require('react-redux');
-import Viewtest from '../views/Viewtest.js'
-let Router = ({routes, routeViews, routeName}) => {
+let Router = ({uniloc, routeViews, routeName}) => {
   let view = routeViews[routeName]
   if(view == null)
   {
@@ -17,17 +16,17 @@ Router = connect((state) => {
 //export Router
 
 var routeHashWatcher = {
-  watch: (dispatch, routes) => {
-    const fn = () => {dispatch(navigationComplete(routes))}
+  watch: (dispatch, uniloc) => {
+    const fn = () => {dispatch(navigationComplete(uniloc))}
     window.addEventListener('load', fn, false)
     window.addEventListener('hashchange', fn, false)
   }
 }
-function navigationComplete(routes) {
-  console.log("NAVCOMPLETE", routes, window.location.hash, window.location.hash.substr(1))
+function navigationComplete(uniloc) {
+  console.log("NAVCOMPLETE", uniloc, window.location.hash, window.location.hash.substr(1))
   return {
     type: 'NAVIGATION/COMPLETE',
-    route: routes.lookup(window.location.hash.substr(1)),
+    route: uniloc.lookup(window.location.hash.substr(1)),
   }
 }
 

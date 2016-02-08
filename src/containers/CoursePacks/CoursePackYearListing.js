@@ -1,5 +1,6 @@
 const React = require('react');
 const {connect} = require('react-redux');
+const {SELECT_COURSE_PACK_YEAR, UNSELECT_COURSE_PACK_YEAR}  = require('../../actions/actions.js');
 const actions = require('../../actions/actions.js');
 import CoursePackYear from './CoursePackYear.js'
 
@@ -23,10 +24,10 @@ CoursePackYearListing = connect(
     },
     (dispatch) => {
         const selectCoursePackYearHandler = (yearId) => {
-            dispatch({type:'SELECT_COURSE_PACK_YEAR', yearId})
+            dispatch({type:SELECT_COURSE_PACK_YEAR, yearId})
         }
         const unselectCoursePackYearHandler = () => {
-            dispatch({type:'UNSELECT_COURSE_PACK_YEAR'})
+            dispatch({type:UNSELECT_COURSE_PACK_YEAR})
         }
         const loadCoursePackYearListing = () => {
             dispatch(actions.loadCoursePackYearListing())

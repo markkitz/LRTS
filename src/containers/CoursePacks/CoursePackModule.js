@@ -1,6 +1,7 @@
 const React = require('react');
 const ClassNames = require('classNames')
 const {connect} = require('react-redux')
+import {UNSELECT_COURSE_PACK_TERM,NAVIGATE_TO_FORM } from '../../actions/actions.js'
 import CoursePackChangeTypeForm from './Subform/CoursePackChangeTypeForm'
 import CoursePackInfoForm  from './Subform/CoursePackInfoForm.js'
 import CoursePackPrintDetailsForm  from './Subform/CoursePackPrintDetailsForm.js'
@@ -68,10 +69,10 @@ CoursePackModule = connect(
   		isLoaded, currentEditForm, courseInfo, printDetails, upload, copyright	};
     },
   	(dispatch) => {
-  		 const unselect = () => dispatch({type:'UNSELECT_COURSE_PACK_TERM'})
+  		 const unselect = () => dispatch({type:UNSELECT_COURSE_PACK_TERM})
        const tabChangeHandler = (form) => {
          if((typeof form) == "string")
-          dispatch({type:'NAVIGATE_TO_FORM', form});
+          dispatch({type:NAVIGATE_TO_FORM, form});
        };
        const onPropertyChange = (dispatchType, name, value) => {
          dispatch({type:dispatchType, keyValue:{ name:name, value:value } })

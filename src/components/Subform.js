@@ -1,13 +1,14 @@
 const React = require('react');
 const ReactRedux = require('react-redux');
 const {connect} = ReactRedux;
+import {PREVIOUS_CLICK, NEXT_CLICK} from '../actions/actions.js'
 import FlatButton from 'material-ui/lib/flat-button';
 import css from '../css/subform.css'
 
 let SubForm = ({ form, children, dispatch, isFirst, isLast}) => {
 
-   let handleOnPrevious = ()  => {dispatch({type:"PREVIOUS_CLICK", form: form})};
-   let handleOnNext = () => {dispatch({type:"NEXT_CLICK", form: form})};
+   let handleOnPrevious = ()  => {dispatch({type:PREVIOUS_CLICK, form: form})};
+   let handleOnNext = () => {dispatch({type:NEXT_CLICK, form: form})};
    return(
       <div className={css.sf}>
           {children}

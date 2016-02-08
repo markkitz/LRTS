@@ -1,3 +1,7 @@
+import {SELECT_COURSE_PACK_YEAR, UNSELECT_COURSE_PACK_YEAR, SELECT_TERM,
+   UNSELECT_COURSE_PACK_TERM, LOAD_COURSE_PACK_YEAR_LISTING } from '../actions/actions.js'
+
+
 const json = {years : [ ],
     selectedYearId:null,
     selectedTerm: null,
@@ -5,15 +9,15 @@ const json = {years : [ ],
     };
 const coursePackYearListing = (state= json, action) => {
 	switch(action.type){
-		case 'SELECT_COURSE_PACK_YEAR':
+		case SELECT_COURSE_PACK_YEAR:
 			return  {...state,  selectedYearId: action.yearId};
-        case 'UNSELECT_COURSE_PACK_YEAR':
+        case UNSELECT_COURSE_PACK_YEAR:
 			return  {...state,  selectedYearId: null};
-        case 'SELECT_TERM':
+        case SELECT_TERM:
             return {...state, selectedTerm:action.termId};
-        case 'UNSELECT_COURSE_PACK_TERM':
+        case UNSELECT_COURSE_PACK_TERM:
             return {...state, selectedTerm:null};
-        case 'LOAD_COURSE_PACK_YEAR_LISTING':
+        case LOAD_COURSE_PACK_YEAR_LISTING:
             let dbState = action.years;
             dbState.isLoaded = true;
            return dbState;
