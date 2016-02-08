@@ -14,22 +14,26 @@ let NavHeaderBar = ({currentRouteName, routeTitles}) => {
         </span>
 
       </div>
-      <div className="nhb-c2">
-        <div className="nhb-c2-sp1">
-          <div className="nhb-c2-sp1-d">
-            <div className="nhb-c2-sp1-d-srch1">
-                <i className="glyphicon glyphicon-search"></i>
-            </div>
-            <div className="nhb-c2-sp1-d-srch2">
-                <input type="text" placeholder="Search…"  />
-            </div>
-          </div>
-        </div>
-      </div>
+<SearchInput />
 
     </nav>
   )
 }
+let SearchInput = () => {
+  return (      <div className="nhb-c2">
+          <div className="nhb-c2-sp1">
+            <div className="nhb-c2-sp1-d">
+              <div className="nhb-c2-sp1-d-srch1">
+                  <i className="glyphicon glyphicon-search"></i>
+              </div>
+              <div className="nhb-c2-sp1-d-srch2">
+                  <input type="text" placeholder="Search…"  />
+              </div>
+            </div>
+          </div>
+        </div>)
+}
+
 NavHeaderBar = connect (
     (state) => {
         let currentRouteName = state.navigationReducer.routeName
