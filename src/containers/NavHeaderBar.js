@@ -12,7 +12,21 @@ let NavHeaderBar = ({currentRouteName, routeTitles}) => {
         <span className="nhb-c1-sp2">
           {routeTitles[currentRouteName]}
         </span>
+
       </div>
+      <div className="nhb-c2">
+        <div className="nhb-c2-sp1">
+          <div className="nhb-c2-sp1-d">
+            <div className="nhb-c2-sp1-d-srch1">
+                <i className="glyphicon glyphicon-search"></i>
+            </div>
+            <div className="nhb-c2-sp1-d-srch2">
+                <input type="text" placeholder="Search…"  />
+            </div>
+          </div>
+        </div>
+      </div>
+
     </nav>
   )
 }
