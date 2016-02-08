@@ -23,7 +23,6 @@ var routeHashWatcher = {
   }
 }
 function navigationComplete(uniloc) {
-  console.log("NAVCOMPLETE", uniloc, window.location.hash, window.location.hash.substr(1))
   return {
     type: 'NAVIGATION/COMPLETE',
     route: uniloc.lookup(window.location.hash.substr(1)),

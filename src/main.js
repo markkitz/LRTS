@@ -2,7 +2,7 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const {Provider} = require('react-redux')
 import {Router, routeHashWatcher} from './router.js'
-import {uniloc, routeViews, routeTitles} from './routes.js'
+import {uniloc, routeViews, routeTitles, showSearchBar} from './routes.js'
 ///// containers ////////////
 import NavPanel from './containers/NavPanel'
 import NavHeaderBar from './containers/NavHeaderBar'
@@ -21,22 +21,18 @@ injectTapEventPlugin();
 const actions = require('./actions/actions')
 
 const store = configureStore();
-console.log("STATE", store.getState())
-
 routeHashWatcher.watch(store.dispatch, uniloc)
-//setTimeout(function(){ store.dispatch(actions.loadCoursePackYearListing())}, 500);
 
 const render = () => {
 	ReactDOM.render(
         (<Provider store={store}>
-          <div>
-
-              <NavHeaderBar routeTitles={routeTitles} />
-              <NavPanel />
-              <div className='cnt-bdy'>
-                <Router uniloc={uniloc} routeViews={routeViews} routeTitles={routeTitles} />
-              </div>
-          </div>
+         <div>
+				<NavHeaderBar routeTitles={routeTitles} showSearchBar={showSearchBar} />
+				<NavPanel />
+				<div className='cnt-bdy'>
+				 <Router uniloc={uniloc} routeViews={routeViews}  />
+				</div>
+         </div>
         </Provider>)
 		, document.getElementById('root')
 	);
