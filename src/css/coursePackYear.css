@@ -1,4 +1,4 @@
- .cpy-selected{
+ :local(.selected){
     margin: 20px -5px 20px -5px;
     background-color: #ddd;
     padding: 0 0 20px 0;
@@ -7,15 +7,17 @@
     -o-transition: margin-top .2s linear;
     transition: margin-top .2s linear;
 }
-.cpy-selected h2{
+ :local(.selected) h2{
     padding-top: 10px;
     margin-left: 20px;
     margin-bottom: 10px;
     font-weight: bold;
     font-size: 22px;
     font-family: 'Roboto', sans-serif;
+    color: rgb(54, 82, 143)
 }
-.cpy {
+
+ :local(.cpy) {
     background: #fff;
     margin: 0 20px -1px 10px;
     -webkit-box-shadow: 3px 3px 5px 0 rgba(189,189,189,1);
@@ -23,35 +25,30 @@
     box-shadow: 3px 3px 5px 0 rgba(189,189,189,1);
     cursor: pointer;
 }
-.cpy-table{
+ :local(.cpyTable){
     width:100%;
 }
-.cpy-table td{
+ :local(.cpyTable) td{
     border:1px solid #ddd;
     padding:0 10px 10px 10px;
 }
-.cpy-table td:first-child{
+ :local(.cpyTable) td:first-child{
   width: 100px;
   padding: 10px;
   text-align: center;
   padding-top: 25px;
   font-weight: bold;
 }
-.cpy-close-btn{
+:local(.closeBtn){
     float:right;
     width:20px;
     margin:5px 10px;
     cursor:pointer;
 }
-.cpy-selected h2{
-  color: rgb(54, 82, 143)
-}
-.cpy-table td div:first-child{
+
+ :local(.cpyTable) td div:first-child{
   font-weight: normal;
   font-size: 8pt;
   text-align: center;
   color:#bbb
-}
-.coursePackYearListing{
-  max-width: 1000px
 }

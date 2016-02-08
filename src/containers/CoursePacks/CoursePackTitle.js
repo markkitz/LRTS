@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../css/CoursePackTitle.css';
+import css from '../../css/CoursePackTitle.css';
 const CoursePackTitle =({coursePackTitle, school, coursePackNumber}) => {
-return (<div className="coursePack-title">
+return (<div className={css.widget}>
           <h1>{coursePackTitle}</h1>
           <h2>{school}</h2>
           <div>Course Pack: {coursePackNumber}</div>

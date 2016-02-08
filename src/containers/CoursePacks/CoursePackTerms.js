@@ -2,9 +2,9 @@ const React = require('react');
 const {connect} = require('react-redux');
 const actions = require('../../actions/actions.js');
 import CoursePackModule from './CoursePackModule.js'
-import '../../css/coursePackTerm.css'
 import StatusIcon from '../../components/StatusIcon'
 import StatusString from '../../components/StatusString'
+import css from '../../css/coursePackTerm.css'
 
 let CoursePackTerms = ({terms}) => {
     let coursePackTermList = terms.map( t => { return <CoursePackTerm key={'coursePackTerm_' + t.id} term={t}/>});
@@ -13,8 +13,8 @@ let CoursePackTerms = ({terms}) => {
 let CoursePackTerm = ({term, checkIfSelected, selectTerm}) => {
     var isSelected =  checkIfSelected(term.id);
     return isSelected ?
-     <CoursePackModule id={term.id} termName={term.term} status={term.status}  /> :
-     <div className='coursePackTerm' onClick={() => {selectTerm(term.id)} }>
+     <CoursePackModule id={term.id} termName={term.term} termStatus={term.status} /> :
+     <div className={css.term} onClick={() => {selectTerm(term.id)} }>
         <StatusIcon status={term.status} />
         <div>Course Pack - {term.term}</div>
         <div><StatusString status={term.status} /></div>

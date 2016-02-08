@@ -3,7 +3,7 @@ const {connect} = require('react-redux');
 import SubForm  from '../../../components/Subform'
 import IconButton from 'material-ui/lib/icon-button';
 import FlatButton from 'material-ui/lib/flat-button';
-import '../../../css/CoursePackChangeTypeForm.css'
+import css from '../../../css/CoursePackChangeTypeForm.css'
 
 const CoursePackChangeTypeForm =   ({ model, onTextBoxChange}) =>
       {
@@ -13,19 +13,19 @@ const CoursePackChangeTypeForm =   ({ model, onTextBoxChange}) =>
           const saveState = () =>{};
           return (
           <SubForm heading={'CoursePackChangeTypeForm'}  form={'CoursePackChangeTypeForm'} isFirst={true} >
-          <div className="coursePackChangeTypeForm">
+          <div className={css.widget}>
               <p>How is this Course Pack different from the last one used for this course?</p>
 
-                <div className="coursePackChangeTypeForm-type selected">
-                  <div className="coursePackChangeTypeForm-type-icon"><i className="fa fa-check" style={selectedStyle} /></div>
-                  <div className="coursePackChangeTypeForm-type-text">
+                <div className={css.widget}>
+                  <div className={css.typeIcon}><i className="fa fa-check" style={selectedStyle} /></div>
+                  <div className={css.typeIconText}>
                     <h3>Major Revision</h3>
                     <p>This is a new course or there has been a major changes. This will require new approvals.</p>
                   </div>
                 </div>
-                <div className="coursePackChangeTypeForm-type">
-                  <div className="coursePackChangeTypeForm-type-icon"> <FlatButton label="SELECT"  /></div>
-                  <div className="coursePackChangeTypeForm-type-text">
+                <div className={css.type}>
+                  <div className={css.typeIcon}> <FlatButton label="SELECT"  /></div>
+                  <div className={css.typeIconText}>
                     <h3>Minor Revision</h3>
                     <p>The changes to this course pack is minor. This not require new approvals.</p>
                   </div>

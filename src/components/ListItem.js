@@ -1,6 +1,6 @@
 const React = require('react')
-import "../css/listItem.css"
+import css from "../css/listItem.css"
 let ListItem = ({id, href, icon}) => {
-  return (<a  className={'listItem'} href={href}>{icon} list item </a>)
+  return (<a  className={css.widget} href={href}>{icon} list item </a>)
 }
 export default ListItem

@@ -1,4 +1,4 @@
-.nhb
+:local(.widget)
 {
     background-color: #3b5998;
     color: rgb(33, 33, 33);
@@ -12,11 +12,11 @@
     top:0px
 
 }
-.nhb-c1 {
+:local(.c1) {
     width: 250px;
     display: flex;
 }
-.nhb-c1-sp1 {
+:local(.c1Sp1) {
     opacity: 0.75;
     padding: 16px 24px;
     padding-top: 16px;
@@ -27,10 +27,10 @@
     -webkit-user-select: none;
     -ms-user-select: none;
 }
-.nhb-c1-sp1 img {
+:local(.c1Sp1) img {
   cursor:pointer;
 }
-.nhb-c1-sp2 {
+:local(.c1Sp2) {
     color: #fff;
     margin: auto 0;
     margin-top: auto;
@@ -43,29 +43,29 @@
     -webkit-font-smoothing: antialiased;
     font-size: 1.5em;
 }
-.nhb-c2 {
+:local(.c2) {
       flex: 1;
       padding-top:1px;
 }
-.nhb-c2-sp1 {
+:local(.c2Sp1) {
     padding: 7px 30px 0px 20px;
     flex: 1;
 }
-.nhb-c2-sp1-d {
+:local(.c2Sp1D) {
     background: rgba(255,255,255,.15);
     display: flex;
 }
-.nhb-c2-sp1-d-srch1 {
+:local(.c2Sp1DSrch1) {
     width: 50px;
     font-size: 14pt;
     color: #fff;
     padding: 9px 0px 0px 14px;
 }
-.nhb-c2-sp1-d-srch2 {
+:local(.c2Sp1DSrch2) {
     flex: 1;
 }
 
-.nhb-c2 input[type=text] {
+:local(.c2) input[type=text] {
     background: none;
     border: none;
     opacity: .9;
@@ -76,7 +76,7 @@
     outline-style:none
 }
 
-.nhb-c2-sp1-d-srch2>input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+:local(.c2Sp1DSrch2)>input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     color: #fff;
     font-size: 17px;
     padding-top: 4px;

@@ -1,4 +1,4 @@
-.labelValue label{
+:local(.widget) label{
     color: rgba(0, 0, 0, 0.46);
     font-size:12px;
     padding-left:2px;
@@ -7,7 +7,7 @@
     display:block;
     color:#aaa;
 }
-.labelValue>div{
+:local(.widget)>div{
   color:#000;
   margin-bottom:5px;
 }

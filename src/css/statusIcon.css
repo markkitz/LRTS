@@ -1,18 +1,18 @@
-.statusIcon {
+:local(.icon) {
 	width: 50px;
 }
-.statusIcon i {
-	
+:local(.icon)i {
+
 }
-.statusIcon i.fa-check
+:local(.icon) i.fa-check
 {
 	    color: #249c49;
 }
-.statusIcon i.glyphicon-unchecked
+:local(.icon) i.glyphicon-unchecked
 {
 	    color: #bbb;
 }
-.statusIcon i.fa-clock-o
+:local(.icon) i.fa-clock-o
 {
 	    color: #bbb;
 }

@@ -1,12 +1,12 @@
-.sf{
-  margin: auto;
-max-width: 600px;
-padding: 10px;
+:local(.sf){
+   margin: auto;
+   max-width: 600px;
+   padding: 10px;
 }
-.sf-prev-next-btns{
-  text-align: center;
-  margin-top:20px
+:local(.sfPrevNextBtns){
+   text-align: center;
+   margin-top:20px
 }
-.sf-prev-next-btns button{
-  margin:0px 5px;
+:local(.sfPrevNextBtns) button{
+   margin:0px 5px;
 }

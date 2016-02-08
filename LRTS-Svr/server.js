@@ -52,7 +52,7 @@ router.route('/coursePackYears')
     .get(function(req, res) {
         var termId =1;
         const years = {years : [
-            {id:1, year:'2015-16', terms:[{id: termId++, term:'Summer', status:'notStarted'}, {id: termId++, term:'Fall', status:'inProgress'}, {id: termId++, term:'Winter', status:'notStarted'}, {id: termId++, term:'Spring', status:'notStarted'}]},
+            {id:1, year:'2015-16', terms:[{id: termId++, term:'Summer', status:'inProgress'}, {id: termId++, term:'Fall', status:'notStarted'}, {id: termId++, term:'Winter', status:'notStarted'}, {id: termId++, term:'Spring', status:'notStarted'}]},
             {id:2, year:'2014-15', terms:[{id: termId++, term:'Summer', status:'approved'}, {id: termId++, term:'Fall', status:'approved'}, {id: termId++, term:'Winter', status:'approved'}, {id: termId++, term:'Spring', status:'approved'}]},
             {id:3, year:'2013-14', terms:[{id: termId++, term:'Summer', status:'approved'}, {id: termId++, term:'Fall', status:'approved'}, {id: termId++, term:'Winter', status:'approved'}, {id: termId++, term:'Spring', status:'approved'}]}
             ]};

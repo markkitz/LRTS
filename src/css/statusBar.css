@@ -1,4 +1,4 @@
-.statusBar {
+:local(.statusBar) {
     font-size: .85em;
     border-left: 6px solid rgba(0,0,0,.15) !important;
     border-left-width: 6px;
@@ -10,7 +10,7 @@
     margin-top: 8px;
     margin-bottom: 8px;
 }
-.statusBar-title {
+:local(.title) {
     padding: 3px 15px 2px 3px;
     display: inline-block;
     line-height: 16px;
@@ -21,44 +21,40 @@
     box-sizing: border-box;
     width: calc(100% - 10px);
 }
-.statusBar-notStarted {
+:local(.notStarted) {
     background-color: #eee;
     color: #777;
 }
-.statusBar-approved {
+:local(.approved) {
     background-color: #287D3D;
     color: #FFF;
 }
-.statusBar-waiting {
+:local(.waiting) {
     background-color: #d6dde7;
     color: #305d8c;
 }
-/*.statusBar-span {
-    width: calc(100%);
-    opacity: 0.95;
-    min-height:35px;
-}*/
-.statusBar-span1 {
+
+:local(.statusBarSpan1) {
     width: calc(100% - 20px);
     opacity: 0.95;
     min-height:35px;
 }
-.statusBar-span2 {
+:local(.statusBarSpan2)  {
     width: calc(200% - 19px);
     opacity: 0.95;
     min-height:35px;
 }
-.statusBar-span3 {
+:local(.statusBarSpan3)  {
     width: calc(300% - 18px);
     opacity: 0.95;
     min-height:35px;
 }
-.statusBar-span4 {
+:local(.statusBarSpan4) {
     width: calc(400% - 17px);
     opacity: 0.95;
     min-height:35px;
 }
-.statusBar i {
+:local(.statusBar) i {
     position: absolute;
     z-index: 5;
     top: 0;

@@ -1,0 +1,16 @@
+:local(.widget){
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  width: 232px;
+  top: 56px;
+  z-index: 4;
+  transition: transform .15s ease-in-out;
+  will-change: top,left;
+  padding:5px;
+}
+:local(.widget) .selected {
+    background-color: rgba(0,0,0,.05);
+    font-weight: bold !important;
+}

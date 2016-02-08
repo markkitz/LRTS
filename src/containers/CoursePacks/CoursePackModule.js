@@ -11,29 +11,21 @@ import CoursePackNotStartedForm from './Subform/CoursePackNotStartedForm.js'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 import StatusIcon from '../../components/StatusIcon'
-import '../../css/course-pack-module.css'
+import css from  '../../css/coursePackModule.css'
 
-
-// const styles = {
-//   headline: {
-//     fontSize: 24,
-//     paddingTop: 16,
-//     marginBottom: 12,
-//     fontWeight: 400,
-//   },
-// };
-
-
-//style={{backgroundColor:'#EFEFEF',color:'#AAA'}}
-let CoursePackModule = ({id, status, isLoaded,currentEditForm, unselect, termName, termState,
-  tabChangeHandler, onTextBoxChange, onPropertyChange,courseInfo, printDetails,copyright, reviewForm, upload }) => {
+let CoursePackModule = ({id,  isLoaded,currentEditForm, unselect, termName, termStatus,
+  tabChangeHandler, onTextBoxChange, onPropertyChange,courseInfo, printDetails,
+  copyright, reviewForm, upload }) => {
 
     const getTabClass = (tabName) => {
-      return ClassNames( {'selectedTab' : currentEditForm == tabName},{'unselectedTab' : currentEditForm != tabName})
+      if(currentEditForm == tabName){
+         return css.selectedTab;
+      }
+      return css.unselectedTab;
     }
 
     const tabs = (
-          <Tabs value={currentEditForm} onChange={tabChangeHandler} className="cpm-tabs" >
+          <Tabs value={currentEditForm} onChange={tabChangeHandler} className={css.tabs} >
             <Tab label="Change Type" value="CoursePackChangeTypeForm"  className={getTabClass("CoursePackChangeTypeForm")} >
               <CoursePackChangeTypeForm />
             </Tab>
@@ -53,13 +45,12 @@ let CoursePackModule = ({id, status, isLoaded,currentEditForm, unselect, termNam
               <CoursePackReviewForm  model={reviewForm} onPropertyChange={onPropertyChange}/>
             </Tab>
           </Tabs>)
-
-    let body = termState == "NotStarted" ? <CoursePackNotStartedForm /> : tabs
+    let body = termStatus == "notStarted" ? <CoursePackNotStartedForm /> : tabs
 
 		return(
 			isLoaded == false ? <h2>loading</h2>:
-		<div className="cpm">
-			<div className={'cpm-hdr'} onClick={() => unselect()} ><StatusIcon status={status} isLarge="true"/>  {"Course Pack - " + termName} </div>
+		<div className={css.widget}>
+			<div className={css.header} onClick={() => unselect()} ><StatusIcon status={termStatus} isLarge="true"/>  {"Course Pack - " + termName} </div>
       {body}
 		</div>);
 };
@@ -72,10 +63,9 @@ CoursePackModule = connect(
     let copyright = isLoaded ? state.coursePackModule.formData.copyright :null;
     let upload = isLoaded ? state.coursePackModule.formData.upload : null;
     let reviewForm = isLoaded ? state.coursePackModule.formData.reviewForm : null;
-    let termState = state.coursePackModule.termState;
 
 		return {
-  		isLoaded, currentEditForm, courseInfo, printDetails, upload, copyright, termState	};
+  		isLoaded, currentEditForm, courseInfo, printDetails, upload, copyright	};
     },
   	(dispatch) => {
   		 const unselect = () => dispatch({type:'UNSELECT_COURSE_PACK_TERM'})

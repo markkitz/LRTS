@@ -1,7 +1,7 @@
 const React = require('react');
 import CoursePackTerms from './CoursePackTerms.js'
 import StatusBar from '../../components/StatusBar.js'
-import '../../css/course-pack-year.css'
+import css from '../../css/coursePackYear.css'
 import '../../css/statusBar.css'
 
 const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHandler, unselectCoursePackYearHandler}) => {
@@ -14,15 +14,15 @@ const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHan
       );
     return(<div>
             {id == selectedYearId ? (
-                <div className='cpy-selected'>
-                <div className='cpy-close-btn' onClick={() => unselectCoursePackYearHandler()}>
+                <div className={css.selected}>
+                <div className={css.closeBtn} onClick={() => unselectCoursePackYearHandler()}>
                     <i className="glyphicon glyphicon-remove"></i>
                 </div>
                     <h2>{year}</h2>
                     <CoursePackTerms  id={id} terms={terms}/>
                 </div>) :
-            (<div className='cpy'  onClick={() => selectCoursePackYearHandler(id)}>
-              <table className='cpy-table'>
+            (<div className={css.cpy}  onClick={() => selectCoursePackYearHandler(id)}>
+              <table className={css.cpyTable}>
                   <tbody>
                       <tr>
                           <td>{year}</td>

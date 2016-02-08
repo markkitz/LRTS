@@ -1,13 +1,13 @@
-.coursePack-title h1
+:local(.widget) h1
 {
   margin: 10px 0 0 0;
   font-size: 24px;
 }
-.coursePack-title h2
+:local(.widget) h2
 {
   margin: 10px 0 0 0px;
   font-size:16px;
 }
-.coursePack-title {
+:local(.widget) {
   margin-bottom: 20px;
 }

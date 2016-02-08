@@ -1,5 +1,20 @@
-.listItem {
-  background-color: #fff;
+:local(.widget) {
   border: 1px solid #ccc;
   display:block;
+  background: #fff;
+   margin: 0 25px -1px 15px;
+   -webkit-box-shadow: 3px 0 5px 0 rgba(189,189,189,1);
+   -moz-box-shadow: 3px 0 5px 0 rgba(189,189,189,1);
+   box-shadow: 3px 0 5px 0 rgba(189,189,189,1);
+   display: flex;
+   cursor: pointer;
+   color:#000;
+
+}
+:local(.widget:hover) {
+   text-decoration: none;
+   color:#000;
+}
+:local(.widget) svg {
+   margin:10px;
 }

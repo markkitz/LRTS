@@ -1,25 +1,24 @@
-.coursePackChangeTypeForm{
+:local(.widget){
   padding-bottom: 20px;
-  font-family: Roboto, sans-serif;
 }
-.coursePackChangeTypeForm  p {
+:local(.widget)  p {
   margin-top: 10px;
   padding-bottom:10px;
 }
-.coursePackChangeTypeForm-type{
+:local(.type){
   clear:left;
   color:#888;
 }
-.coursePackChangeTypeForm-type-icon{
+:local(.typeIcon){
   width:20%;
   float:left;
   text-align: center
 }
-.coursePackChangeTypeForm-type-text{
+:local(.typeIconText){
   width:80%;
   float:left;
 }
-.coursePackChangeTypeForm-type h3{
+:local(.typeIconText) h3{
   margin-top:5px;
 }
 .selected {

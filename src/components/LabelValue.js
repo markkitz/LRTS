@@ -1,13 +1,12 @@
 const React = require('react');
-import '../css/labelValue.css'
-const LabelValue = ({label, value}) => {
+import css from '../css/labelValue.css'
 
-    return (
-      <div className="labelValue">
+const LabelValue = ({label, value}) => {
+   return (
+      <div className={css.widget}>
         <label>{label}</label>
         <div>{value}</div>
       </div>
-    )
-
+   )
 }
 export default LabelValue

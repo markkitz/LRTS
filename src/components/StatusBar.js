@@ -1,6 +1,8 @@
 const React = require('react');
-import '../css/statusBar.css'
 var classNames = require('classnames');
+import css from '../css/statusBar.css'
+console.log("CSS", css)
+
 const StatusBar = ({status}) => {
   let title = "";
   let icon = <i></i>;
@@ -9,24 +11,24 @@ const StatusBar = ({status}) => {
     case 'approved':
       title = "Approved";
       icon = <i className="fa fa-check" ></i>;
-      barClass = "statusBar-approved";
+      barClass = css.approved;
       break;
     case 'notStarted':
       title = "Not Started";
       icon = <i className="glyphicon glyphicon-unchecked" ></i>;
-      barClass = "statusBar-notStarted";
+      barClass = css.notStarted;
       break;
     case 'inProgress':
     title = "In Progress";
       icon = <i className="fa fa-clock-o" ></i>;
-      barClass = "statusBar-waiting";
+      barClass = css.waiting;
       break;
   }
 
- var barClasses = classNames('statusBar', 'statusBar-span1', barClass);
+ var barClasses = classNames(css.statusBar, css.statusBarSpan1, barClass);
 
           return (<div className={barClasses}>
-            <span className="statusBar-title">
+            <span className={css.title}>
               {title}
               {icon}
             </span>

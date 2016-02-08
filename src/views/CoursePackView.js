@@ -5,6 +5,7 @@ import CoursePackTitle from '../containers/CoursePacks/CoursePackTitle.js'
 import CoursePackYearListing from '../containers/CoursePacks/CoursePackYearListing.js'
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
 import MyRawTheme from '../components/theme';
+import css from '../css/coursePackView.css'
 
 const CoursePackView = React.createClass({
 
@@ -23,9 +24,8 @@ const CoursePackView = React.createClass({
   //context and style accordingly
   render () {
     return (
-      <div>
+      <div className={css.view}>
         <CoursePackTitle coursePackNumber='1998' coursePackTitle='Quantitative Analysis Theory' school='School of Sustainable Building and Environmental Management' />
-
         <CoursePackYearListing/>
       </div>
     );
