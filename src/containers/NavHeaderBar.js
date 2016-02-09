@@ -1,9 +1,10 @@
 const React = require('react');
 const {connect} = require('react-redux');
+import Search from 'material-ui/lib/svg-icons/action/search';
 import css from '../css/navHeaderBar.css'
 let NavHeaderBar = ({currentRouteName, routeTitles, showSearchBar}) => {
 
-let searchinput = showSearchBar[currentRouteName] ? <SearchInput /> : null
+  let searchinput = showSearchBar[currentRouteName] ? <SearchInput /> : null
 
    return (
       <nav className={css.widget}>
@@ -26,10 +27,10 @@ let SearchInput = () => {
        <div className={css.c2Sp1}>
          <div className={css.c2Sp1D}>
            <div className={css.c2Sp1DSrch1}>
-               <i className="glyphicon glyphicon-search"></i>
+              <Search className={css.icon} />
            </div>
            <div className={css.c2Sp1DSrch2}>
-               <input type="text" placeholder="Search…"  />
+              <input type="text" placeholder="Search…"  />
            </div>
          </div>
        </div>

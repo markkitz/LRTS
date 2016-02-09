@@ -56,10 +56,13 @@
     display: flex;
 }
 :local(.c2Sp1DSrch1) {
-    width: 50px;
+    width: 45px;
     font-size: 14pt;
     color: #fff;
     padding: 9px 0px 0px 14px;
+}
+:local(.icon) {
+  fill:#fff !important;
 }
 :local(.c2Sp1DSrch2) {
     flex: 1;
