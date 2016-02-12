@@ -1,0 +1,10 @@
+
+:local(.userDiv) {
+   margin: 10px;
+}
+:local(.headingDiv) {
+   font-size:16px;
+   margin: 10px 0px;
+   color:#666;
+
+}

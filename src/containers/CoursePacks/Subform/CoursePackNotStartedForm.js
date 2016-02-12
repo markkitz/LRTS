@@ -2,7 +2,7 @@ const React = require('react');
 const ReactRedux = require('react-redux');
 const {connect} = ReactRedux;
 import SubForm  from '../../../components/Subform'
-import '../../../css/subform.css'
+import css from '../../../css/subform.css'
 import RaisedButton from 'material-ui/lib/raised-button';
 let CoursePackNotStartedForm =   ({dispatch}) =>
       {
@@ -19,7 +19,7 @@ let CoursePackNotStartedForm =   ({dispatch}) =>
           };
 
           return (
-            <div className='sf'>
+            <div className={css.sf}>
                 <table>
                     <tr>
                       <td><RaisedButton

@@ -4,11 +4,19 @@ import ListItem from '../../components/ListItem.js'
 import Book from 'material-ui/lib/svg-icons/av/library-books'
 import css from '../../css/coursePackListing.css'
 let CoursePackListing =({listing}) => {
-  var listItems = listing.map( l => { return <ListItem title={listing.title} href={"#/coursepack/" + l.id} icon={<Book />} />})
+  var listItems = listing.map( l => {
+     return <ListItem key={"cpli" + l.id} title={listing.title} href={"#/coursepack/" + l.id} icon={<Book color="#3399cc" />} >
+      <div className={css.title}>{l.title}</div>
+      <div className={css.coursePackNumber}><span>Course Pack Number:</span> {l.coursePackNumber}</div>
+      <div className={css.school}>{l.school}</div>
+     </ListItem>
+  })
+  console.log("LISTITEMS",    listItems)
   return (
     <div className={css.widget}>
       {listItems}
     </div>)
+
 }
 CoursePackListing = connect( (state) => {
   let listing = state.coursePackListing;

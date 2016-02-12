@@ -10,10 +10,10 @@
    white-space: nowrap;
    overflow: hidden;
 }
-:local(.coursePackNumber) {
+:local(.courseCode) {
    padding-top:13px;
    font-size:13px;
-   width:200px;
+   width:100px;
 }
 :local(.school) {
    padding-top:13px;
@@ -25,6 +25,3 @@
 :local(.coursePackNumber) span:first-child {
    color:#666;
 }
-/*:local(.widget) svg {
-   fill:#3399cc !important;
-}*/

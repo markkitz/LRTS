@@ -1,9 +1,9 @@
 import React from 'react';
 import css from '../css/blockMenu.css';
-const BlockMenu =() => {
+const BlockMenu =({test}) => {
 return (
   <ul className={css.blockMenu}>
-    <li className={css.blockMenuRow-L}>
+    <li className={css.blockMenuRow}>
       <ul>
       <li>
         <a>
@@ -14,7 +14,7 @@ return (
         <li   className={css.selected}>
           <a>
             <i className="fa fa-file-powerpoint-o"></i>
-            <text>Course Packs</text>
+            <text>Course Packs {test}</text>
           </a>
         </li>
         <li>

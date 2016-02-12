@@ -31,14 +31,10 @@
  :local(.cpyTable) td{
     border:1px solid #ddd;
     padding:0 10px 10px 10px;
+    border-top-style: none;
+    border-bottom-style: none;
 }
- :local(.cpyTable) td:first-child{
-  width: 100px;
-  padding: 10px;
-  text-align: center;
-  padding-top: 25px;
-  font-weight: bold;
-}
+
 :local(.closeBtn){
     float:right;
     width:20px;
@@ -51,4 +47,26 @@
   font-size: 8pt;
   text-align: center;
   color:#bbb
+}
+:local(.tdTerm) {
+   width:25%;
+   vertical-align:top;
+}
+:local(.divYearTerms){
+   display: flex;
+   border:1px solid #ddd;
+}
+:local(.divYear){
+ width: 100px !important;
+ padding: 10px;
+ text-align: center;
+ padding-top: 25px;
+ font-weight: bold;
+}
+:local(.divTerms){
+
+   flex:1;
+}
+:local(.verionText) {
+   padding-left:3px;
 }

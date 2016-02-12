@@ -6,9 +6,11 @@ import '../../css/statusBar.css'
 
 const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHandler, unselectCoursePackYearHandler}) => {
     let tdTerms = terms.map(t => {
-        return <td key={'tdTerm_' + t.id}>
+        let span = t.span ? t.span: 1
+        let bar = t.status && t.status != "noChange" ? <StatusBar status={t.status} span={span}><div className={css.verionText}>{t.versionText}&nbsp;&nbsp;&nbsp;&nbsp;{t.versionNumber}</div></StatusBar> : null
+        return <td key={'tdTerm_' + t.id} className={css.tdTerm}>
                   <div>{t.term}</div>
-                  <StatusBar status={t.status} />
+                  {bar}
                 </td>
               }
       );
@@ -22,14 +24,18 @@ const CoursePackYear = ({id, year, terms, selectedYearId,selectCoursePackYearHan
                     <CoursePackTerms  id={id} terms={terms}/>
                 </div>) :
             (<div className={css.cpy}  onClick={() => selectCoursePackYearHandler(id)}>
-              <table className={css.cpyTable}>
-                  <tbody>
-                      <tr>
-                          <td>{year}</td>
-                          {tdTerms}
-                      </tr>
-                  </tbody>
-              </table>
+               <div className={css.divYearTerms}>
+                  <div className={css.divYear}>{year}</div>
+                  <div className={css.divTerms}>
+                    <table className={css.cpyTable}>
+                        <tbody>
+                            <tr>
+                                {tdTerms}
+                            </tr>
+                        </tbody>
+                    </table>
+                 </div>
+              </div>
           </div> )}
         </div>)
 };

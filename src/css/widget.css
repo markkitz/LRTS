@@ -1,0 +1,21 @@
+:local(.widget){
+   background-color: #fff;
+   margin-top:20px;
+}
+:local(.widget)>header {
+   color: #333;
+   border: 1px solid #C2C2C2;
+   background: #fafafa;
+   padding:5px;
+
+}
+:local(.widget)>div {
+   color: #333;
+   border-width: 1px 1px 2px;
+   border-style: solid;
+   border-top: none;
+   border-right-color: #CCC !important;
+   border-bottom-color: #CCC !important;
+   border-left-color: #CCC !important;
+   padding:10px;
+}

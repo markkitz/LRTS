@@ -1,0 +1,28 @@
+:local(.heading){
+   margin: 20px 0 10px 20px;
+   color: #777;
+}
+:local(.title){
+   width:150px;
+   padding-top:12px;
+   font-size:14px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+}
+:local(.versionNumber){
+   width:100px;
+   padding-top:12px;
+   font-size:14px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+}
+:local(.publishDate){
+   width:150px;
+   padding-top:12px;
+   font-size:14px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+}

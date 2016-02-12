@@ -15,11 +15,13 @@ let CoursePackTerm = ({term, checkIfSelected, selectTerm}) => {
     var isSelected =  checkIfSelected(term.id);
     return isSelected ?
      <CoursePackModule id={term.id} termName={term.term} termStatus={term.status} /> :
-     <div className={css.term} onClick={() => {selectTerm(term.id)} }>
-        <StatusIcon status={term.status} />
-        <div>Course Pack - {term.term}</div>
-        <div><StatusString status={term.status} /></div>
-     </div>
+     (  term.status ?
+        <div className={css.term} onClick={() => {selectTerm(term.id)} }>
+           <StatusIcon status={term.status} />
+           <div>Course Pack - {term.term}</div>
+           <div><StatusString status={term.status} /></div>
+        </div> : <div></div>
+     )
 }
 
 
