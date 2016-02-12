@@ -1,0 +1,11 @@
+:local(.view)>h1{
+   margin: 20px 0 0 10px;
+   font-size: 24px;
+   font-weight: normal;
+   color: #2196f3;
+}
+:local(.view)>h2{
+   margin: 5px 0 0 10px;
+   font-size: 16px;
+   font-weight: normal;
+}

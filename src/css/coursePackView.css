@@ -3,6 +3,7 @@
 }
 :local(.view){
       width: 1000px;
+      margin-right:10px;
 }
 :local(.sidePanel) {
    flex:1;
